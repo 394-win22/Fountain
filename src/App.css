@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.feeling{
+  margin:20px;
+  text-align: center;
+
+}
+
+.feeling :hover{
+  background:lightblue;
+}
+
