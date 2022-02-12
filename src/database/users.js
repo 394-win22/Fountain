@@ -35,30 +35,15 @@ export const useUserState = ({setUEmail, setUName, setUid}) => {
 };
 
 export function make_user(UName, UEmail){
-    if (!check_user_exists){
-        const user= UEmail.replaceAll(".", "_");
-        set(ref(db, 'users/' + user), {
-            username: UName,
-            user_email: UEmail,
-        }).then(() => {
-            alert("user success!")
-        }).catch((error) => {
-            console.log(error);
-        });
-    }
-}
-
-export async function check_user_exists(UEmail) {
-    const path = 'users';
-    return await get(ref(db, path)).then((snapshot) => {
-        snapshot.forEach((val) => {
-            if (val.val().user_email === UEmail){
-                return true;
-             }
-        });
-    }).catch((error) => {
-        console.error(error);
-    });
+            const user= UEmail.replaceAll(".", "_");
+            set(ref(db, 'users/' + user), {
+                username: UName,
+                user_email: UEmail,
+            }).then(() => {
+                alert("user success!")
+            }).catch((error) => {
+                console.log(error);
+            });  
 }
 
 
