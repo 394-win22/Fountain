@@ -3,6 +3,7 @@ import './App.css';
 import {SignInButton} from "./components/users"
 import Login from "./pages/Login";
 import Survey1 from "./pages/Survey1";
+import Great from "./pages/Great"
 import {useEffect, useState} from 'react';
 import {useUserState} from "./database/users";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
@@ -27,6 +28,7 @@ function App() {
                                               question={"How are you feeling?"}
                                             
           />} />
+          <Route path="/great" element={<Great/>} />
       </Routes>
 
       </BrowserRouter>

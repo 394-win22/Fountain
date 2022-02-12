@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+.great-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-body{
+  width: 50vw;
+  height: 50vh;
+  background: #61dafb;
+}
+
+.message-body p{
+  width: 100%;
+  margin-top: 2%;
+  text-align: center;
+}
+
+.message-btn{
+  margin-top: 2vh;
+}
