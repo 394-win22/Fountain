@@ -1,7 +1,7 @@
 import {getAuth, GoogleAuthProvider, onIdTokenChanged, signInWithPopup, signOut, onAuthStateChanged} from 'firebase/auth';
 import {firebase} from './firebase'
 import {useState, useEffect} from "react";
-import {child, get, orderByChild, ref, set, remove} from "firebase/database";
+import {child, get, orderByChild, ref, set, remove, update} from "firebase/database";
 import {db} from "./firebase";
 
 export const signInWithGoogle = async () => {
@@ -44,6 +44,19 @@ export function make_user(UName, UEmail){
             }).catch((error) => {
                 console.log(error);
             });  
+}
+
+export function set_feeling(user_feeling, UName, UEmail){
+    console.log("set feeling");
+    const user= UEmail.replaceAll(".", "_");
+    update(ref(db, 'users/' + user), {
+        feeling: user_feeling,
+    }).then(() => {
+        alert("feelinig success!")
+    }).catch((error) => {
+        console.log(error);
+    });  
+
 }
 
 

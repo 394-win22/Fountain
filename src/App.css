@@ -37,7 +37,6 @@
   }
 }
 
-
 .great-wrapper{
   display: flex;
   flex-direction: column;
@@ -60,3 +59,14 @@
 .message-btn{
   margin-top: 2vh;
 }
+
+.feeling{
+  margin:20px;
+  text-align: center;
+
+}
+
+.feeling :hover{
+  background:lightblue;
+}
+
