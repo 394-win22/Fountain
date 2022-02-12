@@ -1,15 +1,23 @@
 import {signInWithGoogle, signOut, make_user} from "../database/users";
 import React from "react";
+import {useNavigate} from 'react-router-dom';
 
-export const SignInButton = ({ setUName }) => (
+
+export function SignInButton({ setUName }){
+    const navigate = useNavigate();
+    return (
     <div className="d-grid gap-3 col-3 mx-auto p-2">
     <button type="button" className="btn btn-outline-dark" onClick={ () => {
         signInWithGoogle().then(([email, name]) => {
             setUName(name);
             make_user(name, email);
+            navigate('/survey');
         })
     }} >Login</button></div>
-)
+    )
+}
+
+
 
 export const SignOutButton = ({ setUEmail, setUName, setUid }) => (
     <div className="d-grid gap-3 col-3 mx-auto m-5">
