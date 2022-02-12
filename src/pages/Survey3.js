@@ -8,12 +8,12 @@ function Survey3({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
     return (
         <div>
             <h1> Hi {UName}! {question}</h1>
-            <Card className="m-2" onClick={ () => {navigate('/survey1')}}>
+            <Card className="feeling m-2" onClick={ () => {navigate('/survey1')}}>
                 <Card.Body>
                     <Card.Text><i className="bi bi-check-square" style={{fontSize:"25px"}}/></Card.Text>
                 </Card.Body>
             </Card>
-            <Card className="m-2" onClick={ () => {navigate('/survey1')}}>
+            <Card className="feeling m-2" onClick={ () => {navigate('/survey1')}}>
                 <Card.Body>
                     <Card.Text><i className="bi bi-x-square" style={{fontSize:"25px"}}/></Card.Text>
                 </Card.Body>

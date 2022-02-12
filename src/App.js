@@ -35,6 +35,10 @@ function App() {
                                               question={"What kind of workout are you looking for?"}
                                             
           />} />
+          <Route path="/survey3" element={<Survey3 user={user} UEmail={UEmail} UName={UName}
+                                                   setUEmail={setUEmail} setUName={setUName} setUid={setUid}
+                                                   question={"Before we begin, is there any injuries or limitations do you have?"}
+          />}/>
           <Route path="/great" element={<Great/>} />
       </Routes>
 
