@@ -15,13 +15,13 @@ function Survey1({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
                 </Card.Body>
             </Card>
             <Card className="m-2" onClick={ () => {
-                    navigate('/survey2');}}>>
+                    navigate('/survey2');}}>
                 <Card.Body>
                     <Card.Title><i class="bi bi-emoji-neutral"></i></Card.Title>
                 </Card.Body>
             </Card>
             <Card className="m-2" onClick={ () => {
-                    navigate('/survey2');}}>>
+                    navigate('/survey2');}}>
                 <Card.Body>
                     <Card.Title><i class="bi bi-emoji-frown"></i></Card.Title>
                 </Card.Body>
