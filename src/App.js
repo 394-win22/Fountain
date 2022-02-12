@@ -3,6 +3,7 @@ import './App.css';
 import {SignInButton} from "./components/users"
 import Login from "./pages/Login";
 import Survey1 from "./pages/Survey1";
+import Survey3 from "./pages/Survey3";
 import {useEffect, useState} from 'react';
 import {useUserState} from "./database/users";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
@@ -25,9 +26,11 @@ function App() {
           <Route path="/survey1" element={<Survey1 user={user} UEmail={UEmail} UName={UName}
                                               setUEmail={setUEmail} setUName={setUName} setUid={setUid}
                                               question={"How are you feeling?"}
-                                            
+
           />} />
-          
+          <Route path="/survey3" element={<Survey3 user={user} UEmail={UEmail} UName={UName}
+                                                   setUEmail={setUEmail} setUName={setUName} setUid={setUid}
+                                                   question={"Before we begin, is there any injuries or limitations do you have?"}/>}/>
       </Routes>
 
       </BrowserRouter>
