@@ -11,7 +11,7 @@ export function SignInButton({ setUName }){
         signInWithGoogle().then(([email, name]) => {
             setUName(name);
             make_user(name, email);
-            navigate('/survey');
+            navigate('/survey1');
         })
     }} >Login</button></div>
     )
