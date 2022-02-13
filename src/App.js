@@ -3,7 +3,7 @@ import './App.css';
 import {SignInButton} from "./components/users"
 import Login from "./pages/Login";
 import Survey1 from "./pages/Survey1";
-import Great from "./pages/Great"
+import AfterSurvey from "./pages/AfterSurvey"
 import Survey2 from "./pages/Survey2";
 import Survey3 from "./pages/Survey3";
 import {useEffect, useState} from 'react';
@@ -19,7 +19,7 @@ function App() {
   return (
       <BrowserRouter>
       <div className="page-header">
-          <h1 style={{fontFamily:"Fredericka the Great"}} >Fountain</h1>
+          <h1 style={{fontFamily:"Fredericka the AfterSurvey"}} >Fountain</h1>
       </div>
 
       <Routes>
@@ -39,7 +39,7 @@ function App() {
                                                    setUEmail={setUEmail} setUName={setUName} setUid={setUid}
                                                    question={"Before we begin, is there any injuries or limitations do you have?"}
           />}/>
-          <Route path="/great" element={<Great/>} />
+          <Route path="/aftersurvey" element={<AfterSurvey/>} />
       </Routes>
 
       </BrowserRouter>

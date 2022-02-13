@@ -1,6 +1,6 @@
-const Great = () =>{
+const AfterSurvey = () =>{
     return (
-        <div className="great-wrapper">
+        <div className="as-wrapper">
             <div className="message-body">
                 <p>Great, we will make sure we avoid putting too much stress on you...</p>
             </div>
@@ -11,4 +11,4 @@ const Great = () =>{
     )
 }
 
-export default Great;
+export default AfterSurvey;
