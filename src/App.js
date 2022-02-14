@@ -4,6 +4,7 @@ import {SignInButton} from "./components/users"
 import Login from "./pages/Login";
 import Survey1 from "./pages/Survey1";
 import AfterSurvey from "./pages/AfterSurvey"
+import Home from "./pages/Home"
 import Survey2 from "./pages/Survey2";
 import Survey3 from "./pages/Survey3";
 import {useEffect, useState} from 'react';
@@ -40,6 +41,7 @@ function App() {
                                                    question={"Before we begin, is there any injuries or limitations do you have?"}
           />}/>
           <Route path="/aftersurvey" element={<AfterSurvey/>} />
+          <Route path="/home" element={<Home/>} />
       </Routes>
 
       </BrowserRouter>

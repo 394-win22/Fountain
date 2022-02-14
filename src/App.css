@@ -37,6 +37,7 @@
   }
 }
 
+
 .as-wrapper{
   display: flex;
   flex-direction: column;
@@ -46,8 +47,6 @@
 
 .message-body{
   width: 50vw;
-  height: 50vh;
-  background: #61dafb;
 }
 
 .message-body p{
@@ -69,4 +68,22 @@
 .survey-button :hover{
   background:lightblue;
 }
+
+.page-header{
+  text-align: center;
+  background:lightblue;
+  padding:15px
+}
+
+.home-button{
+  margin:40px;
+  text-align: center;
+
+}
+
+.home-button :hover{
+  background:lightblue;
+}
+
+
 
