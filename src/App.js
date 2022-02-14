@@ -19,9 +19,8 @@ function App() {
   const [user] = useUserState({setUEmail, setUName, setUid});
   return (
       <BrowserRouter>
-      <div className="page-header">
-          <h1 style={{fontFamily:"Fredericka the AfterSurvey"}} >Fountain</h1>
-      </div>
+      
+    
 
       <Routes>
           <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}

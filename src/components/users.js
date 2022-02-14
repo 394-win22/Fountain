@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 export function SignInButton({ setUName }){
     const navigate = useNavigate();
     return (
-    <div className="d-grid gap-3 col-3 mx-auto p-2">
+    <div className="sign-in d-grid gap-3 col-3 p-2">
     <button type="button" className="btn btn-outline-dark" onClick={ () => {
         signInWithGoogle().then(([email, name]) => {
             setUName(name);
@@ -20,7 +20,7 @@ export function SignInButton({ setUName }){
 
 
 export const SignOutButton = ({ setUEmail, setUName, setUid }) => (
-    <div className="d-grid gap-3 col-3 mx-auto m-5">
+    <div className="sign-in d-grid gap-3 col-3 m-5">
     <button type="button" className="btn btn-outline-dark" onClick={ () => {
         signOut();
         setUEmail("");

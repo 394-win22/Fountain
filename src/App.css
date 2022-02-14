@@ -85,5 +85,30 @@
   background:lightblue;
 }
 
+.login-wrapper{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background: url(images/Background.jpg) no-repeat;
+  background-size:auto 100%;
+
+  
+}
+
+.intro{
+  font-size:4vw;
+}
+
+.sign-in{
+  position: relative;
+  left:40px;
+}
+
+.intro-and-button{
+  position: relative;
+  top:30%;
+  left:4%
+}
+
 
 
