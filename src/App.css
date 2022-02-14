@@ -60,13 +60,13 @@
   margin-top: 2vh;
 }
 
-.feeling{
+.survey-button{
   margin:20px;
   text-align: center;
 
 }
 
-.feeling :hover{
+.survey-button :hover{
   background:lightblue;
 }
 

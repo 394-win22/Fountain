@@ -9,7 +9,7 @@ function Survey1({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
     return (
         <div>
             <h1> Hi {UName}! {question}</h1>
-            <Card className="feeling" onClick={ () => {
+            <Card className="survey-button" onClick={ () => {
                     set_feeling("happy", UName, UEmail)
                     navigate('/survey2');
                     
@@ -18,14 +18,14 @@ function Survey1({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
                     <Card.Title><i class="bi bi-emoji-smile"></i></Card.Title>
                 </Card.Body>
             </Card>
-            <Card className="feeling" onClick={ () => {
+            <Card className="survey-button" onClick={ () => {
                     set_feeling("medium", UName, UEmail)
                     navigate('/survey2');}}>
                 <Card.Body>
                     <Card.Title><i class="bi bi-emoji-neutral"></i></Card.Title>
                 </Card.Body>
             </Card>
-            <Card className="feeling" onClick={ () => {
+            <Card className="survey-button" onClick={ () => {
                     set_feeling("sad", UName, UEmail)
                     navigate('/survey2');}}>
                 <Card.Body>
