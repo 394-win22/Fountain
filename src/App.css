@@ -114,4 +114,9 @@
   text-align: center;
 }
 
+.workout-wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 

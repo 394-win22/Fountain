@@ -9,6 +9,7 @@ import Pose from "./pages/Pose"
 import Survey2 from "./pages/Survey2";
 import Survey3 from "./pages/Survey3";
 import Survey4 from "./pages/Survey4";
+import Workout from "./pages/Workout"
 import {useEffect, useState} from 'react';
 import {useUserState} from "./database/users";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
@@ -47,6 +48,7 @@ function App() {
           <Route path="/home" element={<Home/>} />
           <Route path="/pose" element={<Pose/>} />
           <Route path="/test" element={<SurveyComponent/>} />
+          <Route path="/workout" element={<Workout/>} />
       </Routes>
 
       </BrowserRouter>

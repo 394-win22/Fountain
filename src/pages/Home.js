@@ -6,7 +6,9 @@ const Home = () =>{
     const navigate = useNavigate();
     return (
         <div className="home-wrapper">
-            <Card className="home-button">
+            <Card className="home-button" onClick={ () => {
+                navigate('/workout');
+            }}>
                 <Card.Body>
                     <Card.Title>Personalized Workout</Card.Title>
                 </Card.Body>
