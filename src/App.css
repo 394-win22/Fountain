@@ -121,10 +121,15 @@
 }
 
 .logo{
+  position: absolute;
+  left:10px;
+  top:10px;
+  z-index: 1;
   height: 5vw;
 }
 
 .survey-heading{
+  margin-top: 50px;
   text-align: center;
 }
 
