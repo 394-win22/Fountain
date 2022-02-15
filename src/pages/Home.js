@@ -1,11 +1,14 @@
 import React from "react";
 import {Card} from "react-bootstrap";
 import {useNavigate} from 'react-router-dom';
+import {SignInButton, SignOutButton} from "../components/users";
 
-const Home = () =>{
+
+function Home({ UEmail, setUEmail, UName, setUName}) {
     const navigate = useNavigate();
     return (
         <div className="home-wrapper">
+            
             <Card className="home-button" onClick={ () => {
                 navigate('/workout');
             }}>
@@ -20,8 +23,8 @@ const Home = () =>{
                     <Card.Title>Update Preference Survey </Card.Title>
                 </Card.Body>
             </Card>
-        </div>
-    )
+            <SignOutButton setUEmail={setUEmail} setUName={setUName} />
+    </div>)   
 }
 
 export default Home;

@@ -50,7 +50,8 @@ function App() {
                                                    question={"Where is your injury?"}
           />}/>
           <Route path="/aftersurvey" element={<AfterSurvey/>} />
-          <Route path="/home" element={<Home/>} />
+          <Route path="/home" element={<Home UEmail={UEmail} UName={UName}
+                                                   setUEmail={setUEmail} setUName={setUName}/>} />
           <Route path="/pose" element={<Pose/>} />
           <Route path="/test" element={<SurveyComponent/>} />
           <Route path="/workout" element={<Workout/>} />

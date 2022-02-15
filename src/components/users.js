@@ -19,12 +19,17 @@ export function SignInButton({ setUName }){
 
 
 
-export const SignOutButton = ({ setUEmail, setUName, setUid }) => (
-    <div className="sign-in d-grid gap-3 col-3 m-5">
+export function SignOutButton({ setUEmail, setUName, setUid }){
+    const navigate = useNavigate();
+    return(
+        <div className="sign-out d-grid gap-3 col-3 m-5">
     <button type="button" className="btn btn-outline-dark" onClick={ () => {
         signOut();
         setUEmail("");
         setUName("");
-        setUid("");
+        navigate('/');
     }}>Logout</button></div>
-)
+
+    )
+    
+}
