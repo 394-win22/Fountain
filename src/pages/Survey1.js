@@ -15,7 +15,7 @@ function Survey1({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
                     
                     }}>
                 <Card.Body>
-                    <Card.Title><i class="bi bi-emoji-smile"></i></Card.Title>
+                    <Card.Title><i class="bi bi-emoji-smile"/></Card.Title>
                 </Card.Body>
             </Card>
             <Card className="survey-button" onClick={ () => {
