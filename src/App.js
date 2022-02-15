@@ -7,6 +7,7 @@ import AfterSurvey from "./pages/AfterSurvey"
 import Home from "./pages/Home"
 import Survey2 from "./pages/Survey2";
 import Survey3 from "./pages/Survey3";
+import Survey4 from "./pages/Survey4";
 import {useEffect, useState} from 'react';
 import {useUserState} from "./database/users";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
@@ -37,7 +38,11 @@ function App() {
           />} />
           <Route path="/survey3" element={<Survey3 user={user} UEmail={UEmail} UName={UName}
                                                    setUEmail={setUEmail} setUName={setUName} setUid={setUid}
-                                                   question={"Before we begin, is there any injuries or limitations do you have?"}
+                                                   question={"Before we begin, any new injuries or limitations you'd like to discuss?"}
+          />}/>
+          <Route path="/survey4" element={<Survey4 user={user} UEmail={UEmail} UName={UName}
+                                                   setUEmail={setUEmail} setUName={setUName} setUid={setUid}
+                                                   question={"Where is your injury?"}
           />}/>
           <Route path="/aftersurvey" element={<AfterSurvey/>} />
           <Route path="/home" element={<Home/>} />

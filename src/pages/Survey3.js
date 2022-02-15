@@ -7,17 +7,34 @@ function Survey3({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
     const navigate = useNavigate();
     return (
         <div>
-            <h1> Hi {UName}! {question}</h1>
-            <Card className="survey-button m-2" onClick={ () => {navigate('/aftersurvey')}}>
+            <h1> {question}</h1>
+        
+            <Card className="survey-button m-2" onClick={ () => {navigate('/survey4')}}>
                 <Card.Body>
-                    <Card.Text><i className="bi bi-check-square" style={{fontSize:"25px"}}/></Card.Text>
+                    <Card.Text>Pain</Card.Text>
                 </Card.Body>
             </Card>
-            <Card className="survey-button m-2" onClick={ () => {navigate('/aftersurvey')}}>
+            <Card className="survey-button m-2" onClick={ () => {navigate('/survey4')}}>
                 <Card.Body>
-                    <Card.Text><i className="bi bi-x-square" style={{fontSize:"25px"}}/></Card.Text>
+                    <Card.Text>Stiffness</Card.Text>
                 </Card.Body>
             </Card>
+            <Card className="survey-button m-2" onClick={ () => {navigate('/survey4')}}>
+                <Card.Body>
+                    <Card.Text>Other</Card.Text>
+                </Card.Body>
+            </Card>
+            <Card className="survey-button m-2" onClick={ () => {navigate('/aftersurvey',
+                       { state: {
+                          injury_type: 'none'
+                        }
+                      }) }}>
+                <Card.Body>
+                    <Card.Text>None</Card.Text>
+                </Card.Body>
+            </Card>
+            <div className="skip-container"><a href='/home'>Skip</a></div>
+
         </div>
     );
 }

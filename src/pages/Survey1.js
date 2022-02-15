@@ -32,6 +32,7 @@ function Survey1({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
                     <Card.Title><i class="bi bi-emoji-frown"></i></Card.Title>
                 </Card.Body>
             </Card>
+            <div className="skip-container"><a href='/home'>Skip Survey</a></div>
         </div>
         
 

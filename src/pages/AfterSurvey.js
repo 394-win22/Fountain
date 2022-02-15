@@ -1,11 +1,15 @@
-import {useNavigate} from 'react-router-dom'
+import {useNavigate, useLocation} from 'react-router-dom'
 
-const AfterSurvey = () =>{
+function AfterSurvey({ route, navigation }) {
     const navigate = useNavigate();
+    
+    const {state} = useLocation();
+    const injury = state.injury_type;
+    console.log(injury)
     return (
         <div className="as-wrapper">
             <div className="message-body">
-                <p>Great, we will make sure we avoid putting too much stress on your...</p>
+                {injury == 'none' ? <p>Great, your personalized workout is ready. Head to the home page to view it.</p> :<p>Great, we will make sure we avoid putting too much stress on your {injury}! Your personalized workout is ready. Head to the home page to view it. </p>}
             </div>
             <div className="message-btn">
                 <button type="button" className="btn btn-primary" onClick={ () => {
