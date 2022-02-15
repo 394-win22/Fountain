@@ -8,7 +8,7 @@ function Survey2({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
     const navigate = useNavigate();
     return (
         <div>
-            <h1>{question}</h1>
+            <div className="survey-heading"><h1>{question}</h1></div>
             <Card className="survey-button m-2" onClick={ () => {
                     set_exercise_type("individual easy", UName, UEmail)
                     navigate('/survey3');}}>
