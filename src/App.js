@@ -25,7 +25,7 @@ function App() {
   return (
 
         <div>
-       <span><img className="logo" src={logo}></img></span>
+       <span className="header"><img className="logo" src={logo}></img></span>
 
       <BrowserRouter>
       <Routes>
