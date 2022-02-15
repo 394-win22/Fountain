@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Survey1 from "./pages/Survey1";
 import AfterSurvey from "./pages/AfterSurvey"
 import Home from "./pages/Home"
+import Pose from "./pages/Pose"
 import Survey2 from "./pages/Survey2";
 import Survey3 from "./pages/Survey3";
 import Survey4 from "./pages/Survey4";
@@ -20,8 +21,8 @@ function App() {
   const [user] = useUserState({setUEmail, setUName, setUid});
   return (
       <BrowserRouter>
-      
-    
+
+
 
       <Routes>
           <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
@@ -34,7 +35,7 @@ function App() {
           <Route path="/survey2" element={<Survey2 user={user} UEmail={UEmail} UName={UName}
                                               setUEmail={setUEmail} setUName={setUName} setUid={setUid}
                                               question={"What kind of workout are you looking for?"}
-                                            
+
           />} />
           <Route path="/survey3" element={<Survey3 user={user} UEmail={UEmail} UName={UName}
                                                    setUEmail={setUEmail} setUName={setUName} setUid={setUid}
@@ -46,6 +47,7 @@ function App() {
           />}/>
           <Route path="/aftersurvey" element={<AfterSurvey/>} />
           <Route path="/home" element={<Home/>} />
+          <Route path="/pose" element={<Pose/>} />
       </Routes>
 
       </BrowserRouter>
