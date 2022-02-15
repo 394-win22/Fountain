@@ -40,7 +40,6 @@ export function make_user(UName, UEmail){
                 username: UName,
                 user_email: UEmail,
             }).then(() => {
-                alert("user success!")
             }).catch((error) => {
                 console.log(error);
             });  

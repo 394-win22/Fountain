@@ -43,6 +43,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 .message-body{
@@ -73,6 +74,10 @@
   text-align: center;
   background:lightblue;
   padding:15px
+}
+
+.home-wrapper{
+  margin-top:70px;
 }
 
 .home-button{
@@ -130,7 +135,7 @@
 }
 
 .survey-heading{
-  margin-top: 50px;
+  margin-top: 70px;
   text-align: center;
 }
 
