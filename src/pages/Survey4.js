@@ -10,7 +10,7 @@ function Survey4({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
     const navigate = useNavigate();
     const options = [
         { value: 'neck', label: 'Neck' },
-        { value: 'shoulder', label: 'Shoulders' },
+        { value: 'shoulders', label: 'Shoulders' },
         { value: 'back', label: 'Back' },
         { value: 'hips', label: 'Hips' },
         { value: 'knees', label: 'Knees' }
