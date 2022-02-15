@@ -13,6 +13,7 @@ import {useEffect, useState} from 'react';
 import {useUserState} from "./database/users";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SurveyComponent from "./pages/Survey";
 
 function App() {
   const [uid, setUid] = useState("")
@@ -21,9 +22,6 @@ function App() {
   const [user] = useUserState({setUEmail, setUName, setUid});
   return (
       <BrowserRouter>
-
-
-
       <Routes>
           <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
                                                         setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
@@ -48,6 +46,7 @@ function App() {
           <Route path="/aftersurvey" element={<AfterSurvey/>} />
           <Route path="/home" element={<Home/>} />
           <Route path="/pose" element={<Pose/>} />
+          <Route path="/test" element={<SurveyComponent/>} />
       </Routes>
 
       </BrowserRouter>
