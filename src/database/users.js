@@ -52,7 +52,42 @@ export function set_feeling(user_feeling, UName, UEmail){
     update(ref(db, 'users/' + user), {
         feeling: user_feeling,
     }).then(() => {
-        alert("feelinig success!")
+    }).catch((error) => {
+        console.log(error);
+    });  
+
+}
+
+export function set_exercise_type(exercise_type, UName, UEmail){
+    console.log("set exercise type");
+    const user= UEmail.replaceAll(".", "_");
+    update(ref(db, 'users/' + user), {
+        exercise_type: exercise_type,
+    }).then(() => {
+    }).catch((error) => {
+        console.log(error);
+    });  
+
+}
+
+export function set_injury_type(injury_type, UName, UEmail){
+    console.log("set injury type");
+    const user= UEmail.replaceAll(".", "_");
+    update(ref(db, 'users/' + user), {
+        injury_type: injury_type,
+    }).then(() => {
+    }).catch((error) => {
+        console.log(error);
+    });  
+
+}
+
+export function set_injury_location(injury_location, UName, UEmail){
+    console.log("set injury loc");
+    const user= UEmail.replaceAll(".", "_");
+    update(ref(db, 'users/' + user), {
+        injury_location: injury_location,
+    }).then(() => {
     }).catch((error) => {
         console.log(error);
     });  

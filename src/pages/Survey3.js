@@ -2,6 +2,7 @@ import React from "react";
 import {Card} from "react-bootstrap";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useNavigate } from 'react-router-dom';
+import {set_injury_type} from "../database/users";
 
 function Survey3({ user, UEmail, setUEmail, UName, setUName, setUid, question}) {
     const navigate = useNavigate();
@@ -9,24 +10,32 @@ function Survey3({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
         <div>
             <h1> {question}</h1>
         
-            <Card className="survey-button m-2" onClick={ () => {navigate('/survey4')}}>
+            <Card className="survey-button m-2" onClick={ () => {
+                set_injury_type("pain", UName, UEmail);
+                navigate('/survey4')}}>
                 <Card.Body>
                     <Card.Text>Pain</Card.Text>
                 </Card.Body>
             </Card>
-            <Card className="survey-button m-2" onClick={ () => {navigate('/survey4')}}>
+            <Card className="survey-button m-2" onClick={ () => {
+                set_injury_type("stiffness", UName, UEmail);
+                navigate('/survey4')}}>
                 <Card.Body>
                     <Card.Text>Stiffness</Card.Text>
                 </Card.Body>
             </Card>
-            <Card className="survey-button m-2" onClick={ () => {navigate('/survey4')}}>
+            <Card className="survey-button m-2" onClick={ () => {
+                set_injury_type("other", UName, UEmail);
+                navigate('/survey4')}}>
                 <Card.Body>
                     <Card.Text>Other</Card.Text>
                 </Card.Body>
             </Card>
-            <Card className="survey-button m-2" onClick={ () => {navigate('/aftersurvey',
+            <Card className="survey-button m-2" onClick={ () => {
+                set_injury_type("none", UName, UEmail);
+                navigate('/aftersurvey',
                        { state: {
-                          injury_type: 'none'
+                          injury_location: 'none'
                         }
                       }) }}>
                 <Card.Body>

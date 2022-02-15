@@ -4,8 +4,9 @@ function AfterSurvey({ route, navigation }) {
     const navigate = useNavigate();
     
     const {state} = useLocation();
-    const injury = state.injury_type;
-    console.log(injury)
+    console.log(state);
+    const injury = state.injury_location;
+    console.log(injury);
     return (
         <div className="as-wrapper">
             <div className="message-body">
