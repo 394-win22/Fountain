@@ -14,7 +14,8 @@ import {useUserState} from "./database/users";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import logo from './images/fountainlogo.jpg'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SurveyComponent from "./pages/Survey";
+import {Survey} from "./pages/Survey";
+
 import Pose from "./pages/Pose";
 
 function App() {
@@ -31,11 +32,11 @@ function App() {
       <Routes>
           <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
                                                         setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
-          <Route path="/survey1" element={<Survey1 user={user} UEmail={UEmail} UName={UName}
-                                              setUEmail={setUEmail} setUName={setUName} setUid={setUid}
-                                              question={"How are you feeling?"}
+          {/*<Route path="/survey1" element={<Survey1 user={user} UEmail={UEmail} UName={UName}*/}
+          {/*                                    setUEmail={setUEmail} setUName={setUName} setUid={setUid}*/}
+          {/*                                    question={"How are you feeling?"}*/}
 
-          />} />
+          {/*/>} />*/}
           <Route path="/survey2" element={<Survey2 user={user} UEmail={UEmail} UName={UName}
                                               setUEmail={setUEmail} setUName={setUName} setUid={setUid}
                                               question={"What kind of workout are you looking for?"}
@@ -53,7 +54,7 @@ function App() {
           <Route path="/home" element={<Home UEmail={UEmail} UName={UName}
                                                    setUEmail={setUEmail} setUName={setUName}/>} />
           <Route path="/pose" element={<Pose/>} />
-          <Route path="/test" element={<SurveyComponent/>} />
+          <Route path="/test" element={<Survey/>} />
           <Route path="/workout" element={<Workout/>} />
       </Routes>
 
