@@ -1,12 +1,15 @@
 import {useParams} from "react-router-dom";
 import {isValidElement, useEffect, useState} from "react";
 import {get_user} from "../database/users";
+import { Burger } from '../Burger/Burger';
+import { Menu } from '../Menu/Menu';
 
 export function Profile() {
     const { id } = useParams()
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [photo, setPhoto] = useState("")
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         get_user(id).then(value =>
@@ -20,6 +23,10 @@ export function Profile() {
 
     return (
         <div className="container">
+          <div>
+            <Burger open={open} setOpen={setOpen} />
+            <Menu open={open} setOpen={setOpen} />
+          </div>
             <div className="row">
                 <div className="col-sm-6" id ="profile-photo-container">
                     <img className = "profile-photo" src={photo} alt="UserPhoto"/>
