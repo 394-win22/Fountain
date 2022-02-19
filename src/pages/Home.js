@@ -8,7 +8,7 @@ import {useEffect, useState} from 'react';
 
 function Home({ UEmail, setUEmail, UName, setUName}) {
     const navigate = useNavigate();
-    const [workouts, setWorkouts] = useState();
+    const [workouts, setWorkouts] = useState([]);
 
     useEffect(() => {
         fetch_workouts().then(value => {
@@ -21,10 +21,10 @@ function Home({ UEmail, setUEmail, UName, setUName}) {
 
     const Workout = () => {
         return(
-        workouts.map(workout => <div key={workout["Index"]}>{workout} </div>
+        workouts.map(workout => <div key={workout["Index"] }>{workout} </div>
         )) 
     }
-
+    
 
     return (
         <div className="home-wrapper">
