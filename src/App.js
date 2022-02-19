@@ -31,30 +31,8 @@ function App() {
       <Routes>
           <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
                                                         setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
-          <Route path="/survey1" element={<Survey1 user={user} UEmail={UEmail} UName={UName}
-                                              setUEmail={setUEmail} setUName={setUName} setUid={setUid}
-                                              question={"How are you feeling?"}
-
-          />} />
-          <Route path="/survey2" element={<Survey2 user={user} UEmail={UEmail} UName={UName}
-                                              setUEmail={setUEmail} setUName={setUName} setUid={setUid}
-                                              question={"What kind of workout are you looking for?"}
-
-          />} />
-          <Route path="/survey3" element={<Survey3 user={user} UEmail={UEmail} UName={UName}
-                                                   setUEmail={setUEmail} setUName={setUName} setUid={setUid}
-                                                   question={"Before we begin, any new injuries or limitations you'd like to discuss?"}
-          />}/>
-          <Route path="/survey4" element={<Survey4 user={user} UEmail={UEmail} UName={UName}
-                                                   setUEmail={setUEmail} setUName={setUName} setUid={setUid}
-                                                   question={"Where is your injury?"}
-          />}/>
-          <Route path="/aftersurvey" element={<AfterSurvey/>} />
           <Route path="/home" element={<Home UEmail={UEmail} UName={UName}
                                                    setUEmail={setUEmail} setUName={setUName}/>} />
-          <Route path="/pose" element={<Pose/>} />
-          <Route path="/test" element={<SurveyComponent/>} />
-          <Route path="/workout" element={<Workout/>} />
       </Routes>
 
       </BrowserRouter>

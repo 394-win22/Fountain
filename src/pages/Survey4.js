@@ -18,7 +18,7 @@ function Survey4({ user, UEmail, setUEmail, UName, setUName, setUid, question}) 
     const [injury, setInjury] = useState("");
     return (
         <div>
-            <h1 className="survey-heading"> {question}</h1>
+            <div className="survey-heading"><h1> {question}</h1></div>
         
             <Select options={options} onChange={value => {setInjury(value[0].value)}} />
             <button type="button" className="btn btn-primary" onClick={ () => {
