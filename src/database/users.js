@@ -7,7 +7,7 @@ import {db} from "./firebase";
 export const signInWithGoogle = async () => {
     return await signInWithPopup(getAuth(firebase), new GoogleAuthProvider()).then(
         (result) => {
-            return [result.user.email, result.user.displayName, result.user.photoURL];
+            return [result.user.uid,  result.user.email, result.user.displayName, result.user.photoURL];
         }
     )
 };
@@ -34,15 +34,24 @@ export const useUserState = ({setUEmail, setUName, setUid}) => {
     return [user];
 };
 
-export function make_user(UName, UEmail){
-            const user= UEmail.replaceAll(".", "_");
-            set(ref(db, 'users/' + user), {
-                username: UName,
-                user_email: UEmail,
-            }).then(() => {
-            }).catch((error) => {
-                console.log(error);
-            });  
+export function make_user(uid, name, email, photoUrl){
+    set(ref(db, 'users/' + uid), {
+        userID: uid,
+        userName: name,
+        userEmail: email,
+        userPhoto: photoUrl
+    }).then(() => {
+    }).catch((error) => {
+        console.log(error);
+    });
+}
+
+export async function get_user(uid) {
+    return await get(child(ref(db), `users/` + uid)).then((snapshot) => {
+        return snapshot;
+    }).catch((error) => {
+        console.error(error);
+    })
 }
 
 export function set_feeling(user_feeling, UName, UEmail){
