@@ -19,9 +19,17 @@ function Home({ UEmail, setUEmail, UName, setUName}) {
     })
     }, []);
 
+    const Workout = () => {
+        return(
+        workouts.map(workout => <div key={workout["Index"]}>{workout} </div>
+        )) 
+    }
+
+
     return (
         <div className="home-wrapper">
-            <SignOutButton setUEmail={setUEmail} setUName={setUName} />
+        <Workout />
+        <SignOutButton setUEmail={setUEmail} setUName={setUName} />
         </div>
     )  
 }

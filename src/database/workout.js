@@ -7,7 +7,7 @@ import {db} from "./firebase";
 
 
 export async function fetch_workouts() {
-    const path = '/';
+    const path = '/workouts';
     return await get(ref(db, path)).then((snapshot) => {
         const workOutsArray = [];
         snapshot.forEach((val) => {
