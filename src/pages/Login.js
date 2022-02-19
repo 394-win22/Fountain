@@ -4,10 +4,9 @@ import {SignInButton, SignOutButton} from "../components/users";
 function Login({ user, UEmail, setUEmail, UName, setUName, setUid}) {
     
     return (
-        
         <div className="login-wrapper">
-        <div className="intro-and-button">
-            <h1 className="intro" style={{fontFamily:"Fredericka the AfterSurvey"}} >Welcome to Fountain</h1>
+            <div className="intro-and-button">
+                <h1 className="intro" style={{fontFamily:"Fredericka the AfterSurvey"}} >Welcome to Fountain</h1>
                 { user ? <SignOutButton setUEmail={setUEmail} setUName={setUName} setUid={setUid}/> :
                         <SignInButton setUEmail={setUEmail} setUName={setUName} /> }
                     

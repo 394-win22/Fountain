@@ -9,7 +9,6 @@ export function Profile() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [photo, setPhoto] = useState("")
-    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         get_user(id).then(value =>
@@ -22,11 +21,7 @@ export function Profile() {
     }, []);
 
     return (
-        <div className="container">
-          <div>
-            <Burger open={open} setOpen={setOpen} />
-            <Menu open={open} setOpen={setOpen} />
-          </div>
+        <div className="container mt-5">
             <div className="row">
                 <div className="col-sm-6" id ="profile-photo-container">
                     <img className = "profile-photo" src={photo} alt="UserPhoto"/>

@@ -1,8 +1,9 @@
 import {getAuth, GoogleAuthProvider, onIdTokenChanged, signInWithPopup, signOut, onAuthStateChanged} from 'firebase/auth';
 import {firebase} from './firebase'
 import {useState, useEffect} from "react";
-import {child, get, orderByChild, ref, set, remove, update} from "firebase/database";
+import { get, ref, set, update} from "firebase/database";
 import {db} from "./firebase";
+
 
 export const signInWithGoogle = async () => {
     return await signInWithPopup(getAuth(firebase), new GoogleAuthProvider()).then(
@@ -47,7 +48,7 @@ export function make_user(uid, name, email, photoUrl){
 }
 
 export async function get_user(uid) {
-    return await get(child(ref(db), `users/` + uid)).then((snapshot) => {
+    return await get(ref(db, `users/` + uid)).then((snapshot) => {
         return snapshot;
     }).catch((error) => {
         console.error(error);

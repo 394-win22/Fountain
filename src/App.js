@@ -1,35 +1,47 @@
 import './App.css';
 import Login from "./pages/Login";
 import Home from "./pages/Home"
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import {useUserState} from "./database/users";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import logo from './images/fountainlogo.jpg'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Profile} from "./pages/Profile";
+import {Navbar, NavbarBrand, Container} from "react-bootstrap";
+import {Burger} from "./Burger/Burger";
+import {Menu} from "./Menu/Menu";
 
 function App() {
   const [uid, setUid] = useState("")
   const [UEmail, setUEmail] = useState("");
   const [UName, setUName] = useState("");
   const [user] = useUserState({setUEmail, setUName, setUid});
+  const [open, setOpen] = useState(false);
+
   return (
-
         <div>
-       <span className="header"><img className="logo" src={logo}></img></span>
+            <Navbar bg="light">
+                <Container>
+                    <NavbarBrand className="me-2" href="/">
+                        <img className="d-inline-block align-top" src={logo} alt="logo" height="60"/>
+                    </NavbarBrand>
+                </Container>
+                <div>
+                    <Burger open={open} setOpen={setOpen} />
+                    <Menu open={open} setOpen={setOpen} uid={uid}/>
+                </div>
+            </Navbar>
 
-      <BrowserRouter>
-      <Routes>
-          <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
-                                                        setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
-          <Route path="/home" element={<Home UEmail={UEmail} UName={UName}
-                                                   setUEmail={setUEmail} setUName={setUName}/>} />
-          <Route path="profile/:id" element={<Profile />} />
-      </Routes>
-
-      </BrowserRouter>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
+                                                                setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
+                    <Route path="/home" element={<Home UEmail={UEmail} UName={UName}
+                                                           setUEmail={setUEmail} setUName={setUName}/>} />
+                    <Route path="profile/:id" element={<Profile />} />
+                </Routes>
+            </BrowserRouter>
       </div>
-
     );
 }
 
