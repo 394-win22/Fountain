@@ -40,7 +40,7 @@ function Home({ UEmail, setUEmail, UName, setUName}) {
 
     const Workout = () => {
         return(
-        workouts.map(workout => <div key={workout["Index"] }>{workout} 2m </div>
+        workouts.map(workout => <div key={Math.random()}>{workout} 2m </div>
         )) 
     }
     
