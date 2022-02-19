@@ -18,3 +18,4 @@ export async function fetch_workouts() {
         console.error(error);
     });
 }
+

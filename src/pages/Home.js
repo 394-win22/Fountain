@@ -10,19 +10,28 @@ function Home({ UEmail, setUEmail, UName, setUName}) {
     const navigate = useNavigate();
     const [workouts, setWorkouts] = useState();
     
-    fetch_workouts().then(value => {
-        let random = value.sort(() => .5 - Math.random()).slice(0,5)
-        const workOutArr = random.map(x => x["Exercise Name"]);
-        setWorkouts(workOutArr);
-        console.log(workOutArr);
+    // fetch_workouts().then(value => {
+    //     let random = value.sort(() => .5 - Math.random()).slice(0,5)
+    //     const workOutArr = random.map(x => x["Exercise Name"]);
+        
+    //     setWorkouts(workOutArr);
+    //     console.log(workOutArr);
+    // })
+
+    useEffect(() => {
+        fetch_workouts().then(value => {
+            let random = value.sort(() => .5 - Math.random()).slice(0,5);
+            const workOutArr = random.map(x => x["Exercise Name"]);
+            setWorkouts(workOutArr);
+            console.log(workOutArr);
     })
+    }, [workouts]);
+
     return (
         <div className="home-wrapper">
-            
-           
             <SignOutButton setUEmail={setUEmail} setUName={setUName} />
         </div>
-    )   
+    )  
 }
 
 export default Home;
