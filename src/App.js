@@ -14,7 +14,8 @@ import {useUserState} from "./database/users";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import logo from './images/fountainlogo.jpg'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import SurveyComponent from "./pages/Survey";
+import {Survey} from "./pages/Survey";
+
 import Pose from "./pages/Pose";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                                                         setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
           <Route path="/home" element={<Home UEmail={UEmail} UName={UName}
                                                    setUEmail={setUEmail} setUName={setUName}/>} />
+
       </Routes>
 
       </BrowserRouter>
