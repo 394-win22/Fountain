@@ -24,7 +24,7 @@ const UrgeWithPleasureComponent = ({playing}) => {
     </CountdownCircleTimer>)
 }
 
-function Home({ UEmail, setUEmail, UName, setUName}) {
+function Home({ setUEmail, setUName}) {
     const navigate = useNavigate();
     const [workouts, setWorkouts] = useState([]);
     const [playing, setPlaying] = useState(false);
@@ -43,7 +43,7 @@ function Home({ UEmail, setUEmail, UName, setUName}) {
         workouts.map(workout => <div key={Math.random()}>{workout} 2m </div>
         )) 
     }
-    
+
     return (
         <div className="home-wrapper">
         <Workout />
@@ -51,7 +51,7 @@ function Home({ UEmail, setUEmail, UName, setUName}) {
         <UrgeWithPleasureComponent playing={playing}/>
         <SignOutButton setUEmail={setUEmail} setUName={setUName} />
         </div>
-    );  
+    );
 }
 
 export default Home;

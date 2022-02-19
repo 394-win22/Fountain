@@ -28,7 +28,7 @@ function App() {
                 </Container>
                 <div>
                     <Burger open={open} setOpen={setOpen} />
-                    <Menu open={open} setOpen={setOpen} uid={uid}/>
+                    <Menu open={open} setOpen={setOpen} uid={uid} setUid={setUid}/>
                 </div>
             </Navbar>
 
@@ -36,8 +36,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
                                                                 setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
-                    <Route path="/home" element={<Home UEmail={UEmail} UName={UName}
-                                                           setUEmail={setUEmail} setUName={setUName}/>} />
+                    <Route path="/home" element={<Home setUEmail={setUEmail} setUName={setUName}/>} />
                     <Route path="profile/:id" element={<Profile />} />
                 </Routes>
             </BrowserRouter>
