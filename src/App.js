@@ -1,22 +1,12 @@
-//import logo from './logo.svg';
 import './App.css';
-import {SignInButton} from "./components/users"
 import Login from "./pages/Login";
-import Survey1 from "./pages/Survey1";
-import AfterSurvey from "./pages/AfterSurvey"
 import Home from "./pages/Home"
-import Survey2 from "./pages/Survey2";
-import Survey3 from "./pages/Survey3";
-import Survey4 from "./pages/Survey4";
-import Workout from "./pages/Workout"
 import {useEffect, useState} from 'react';
 import {useUserState} from "./database/users";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import logo from './images/fountainlogo.jpg'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Survey} from "./pages/Survey";
-
-import Pose from "./pages/Pose";
+import {Profile} from "./pages/Profile";
 
 function App() {
   const [uid, setUid] = useState("")
@@ -34,7 +24,7 @@ function App() {
                                                         setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
           <Route path="/home" element={<Home UEmail={UEmail} UName={UName}
                                                    setUEmail={setUEmail} setUName={setUName}/>} />
-
+          <Route path="profile/:id" element={<Profile />} />
       </Routes>
 
       </BrowserRouter>

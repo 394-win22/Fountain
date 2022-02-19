@@ -8,9 +8,9 @@ export function SignInButton({ setUName }){
     return (
     <div className="sign-in d-grid gap-3 col-3 p-2">
     <button type="button" className="btn btn-outline-dark" onClick={ () => {
-        signInWithGoogle().then(([email, name]) => {
+        signInWithGoogle().then(([uid, email, name, photoUrl]) => {
             setUName(name);
-            make_user(name, email);
+            make_user(uid, name, email, photoUrl);
             navigate('/home');
         })
     }} >Login</button></div>
