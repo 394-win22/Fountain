@@ -2,6 +2,7 @@ import React from 'react';
 import { bool } from 'prop-types';
 import { StyledMenu } from './Menu.styled';
 import {make_user, signInWithGoogle, signOut} from "../database/users";
+import {useNavigate} from 'react-router-dom';
 
 export const Menu = ({ open, uid, setUid }) => {
     return (
@@ -15,9 +16,10 @@ export const Menu = ({ open, uid, setUid }) => {
                 Profile
             </a>
             {uid ?
-                <a href="#" onClick={ () => {
+                <a href="/" onClick={ () => {
                     signOut().then(() => {
                         setUid("");
+                        
                     })
                 }}>
                     <span role="img" aria-label="contact">&#x1f4e9;</span>

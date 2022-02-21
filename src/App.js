@@ -20,7 +20,7 @@ function App() {
 
   return (
         <div>
-            <Navbar bg="light">
+            {user? <Navbar bg="light">
                 <Container>
                     <NavbarBrand className="me-2" href="/">
                         <img className="d-inline-block align-top" src={logo} alt="logo" height="60"/>
@@ -30,7 +30,7 @@ function App() {
                     <Burger open={open} setOpen={setOpen} />
                     <Menu open={open} setOpen={setOpen} uid={uid} setUid={setUid}/>
                 </div>
-            </Navbar>
+            </Navbar> : null}
 
             <BrowserRouter>
                 <Routes>
