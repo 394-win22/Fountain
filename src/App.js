@@ -4,7 +4,7 @@ import Home from "./pages/Home"
 import {useState} from 'react';
 import {useUserState} from "./database/users";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import logo from './images/fountainlogo.jpg'; 
+import logo from './images/Fountain-logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Profile} from "./pages/Profile";
 import {Navbar, NavbarBrand, Container} from "react-bootstrap";
