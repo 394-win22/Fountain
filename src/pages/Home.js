@@ -8,7 +8,7 @@ import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import {WorkoutArea} from "../components/workoutArea";
 import {WorkoutFinished} from "../components/workoutFinished";
 
-function Home() {
+function Home({uid}) {
     const [workouts, setWorkouts] = useState([]);
     const [finished, setFinished] = useState(false);
 
@@ -24,7 +24,7 @@ function Home() {
         <div className="home-wrapper m-3">
             {finished ?
                 <WorkoutFinished />
-                : <WorkoutArea workouts={workouts} setFinished={setFinished}/>
+                : <WorkoutArea workouts={workouts} setFinished={setFinished} uid={uid}/>
             }
         </div>
     );

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {CountdownCircleTimer} from "react-countdown-circle-timer";
+import {storeWorkoutDate} from "../database/users";
 
 function UrgeWithPleasureComponent({playing, updateIndex, setPlaying}){
     const [key, setKey] = useState(0)
@@ -26,7 +27,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying}){
     </CountdownCircleTimer>)
 }
 
-export function WorkoutArea({ workouts, setFinished}) {
+export function WorkoutArea({ workouts, setFinished, uid}) {
     const [playing, setPlaying] = useState(false);
     const [index, setIndex] = useState(0);
 
@@ -40,7 +41,7 @@ export function WorkoutArea({ workouts, setFinished}) {
 
     const updateIndex = () => {
         if (index + 1 >= workouts.length) {
-            setFinished(true)
+            storeWorkoutDate(uid).then(setFinished(true))
         }
         setIndex(index + 1);
     }

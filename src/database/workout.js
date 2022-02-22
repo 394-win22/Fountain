@@ -4,8 +4,6 @@ import {child, get, orderByChild, ref, set, remove, update} from "firebase/datab
 import {db} from "./firebase";
 
 
-
-
 export async function fetch_workouts() {
     const path = '/workouts';
     return await get(ref(db, path)).then((snapshot) => {
