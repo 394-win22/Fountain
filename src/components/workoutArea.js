@@ -32,7 +32,9 @@ export function WorkoutArea({ workouts, setFinished}) {
 
     const Workout = () => {
         return(
-            <div>{index + 1}/{workouts.length} {workouts[index]}</div>
+            
+            <div> <h1 className = "wodc"> WODC </h1> 
+            <div className="workout">{workouts[index]}</div><div className="workout-index">{index + 1}/{workouts.length}</div> </div>
         )
     }
 
@@ -47,14 +49,14 @@ export function WorkoutArea({ workouts, setFinished}) {
         <div>
             <Workout />
             { index < 5 ?
-                <div>
+                <div className = "timer-button">
                     { playing ?
-                        <button onClick={() => setPlaying(false)}>Pause</button>:
-                        <button onClick={() => setPlaying(true)}>Start</button>}
+                        <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(false)}>Pause</button>:
+                        <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(true)}>Start</button>}
                 </div>
                 : null
             }
-            <UrgeWithPleasureComponent playing={playing} updateIndex={updateIndex} setPlaying={setPlaying}/>
+            <div className="timer"> <UrgeWithPleasureComponent className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying}/></div>
         </div>
     )
 }

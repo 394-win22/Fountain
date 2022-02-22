@@ -151,4 +151,28 @@
   
 }
 
+.wodc{
+  text-align:center;
+  color:hotpink;
+}
+.workout{
+  text-align: center;
+  font-size: 30px;
+}
 
+.workout-index{
+  text-align: center;
+  font-size: 20px;
+}
+
+.timer-button{
+  text-align: center;
+  font-size: 15px;
+  padding-top:1%;
+}
+.timer{
+  width: 100%;
+  height: auto;
+  text-align: center;
+
+}
