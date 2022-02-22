@@ -8,21 +8,21 @@ export const Menu = ({ open, uid, setUid }) => {
     return (
         <StyledMenu open={open}>
             <a href="/home">
-                <span role="img" aria-label="price">&#x1f4b8;</span>
+                
                 Home
             </a>
             <a href={uid ? "/profile/"+uid : "/"}>
-                <span role="img" aria-label="about us">&#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;</span>
+
                 Profile
             </a>
             {uid ?
                 <a href="/" onClick={ () => {
                     signOut().then(() => {
                         setUid("");
-                        
+
                     })
                 }}>
-                    <span role="img" aria-label="contact">&#x1f4e9;</span>
+
                     Logout
                 </a> :
                 <a href="#" onClick={ () => {
@@ -31,7 +31,7 @@ export const Menu = ({ open, uid, setUid }) => {
                         make_user(uid, name, email, photoUrl);
                     })
                 }}>
-                    <span role="img" aria-label="contact">&#x1f4e9;</span>
+
                     Login
                 </a>
             }
