@@ -60,13 +60,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying}){
     
 }
 
-<<<<<<< HEAD
 export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
-=======
-
-
-export function WorkoutArea({ workouts, setFinished, uid}) {
->>>>>>> 860f587... display message
     const [playing, setPlaying] = useState(false);
     const [index, setIndex] = useState(0);
 
