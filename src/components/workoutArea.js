@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {CountdownCircleTimer} from "react-countdown-circle-timer";
 import {storeWorkoutDate} from "../database/users";
+import {UpdateBadges, updateBadges} from "./badegs";
 
 function UrgeWithPleasureComponent({playing, updateIndex, setPlaying}){
     const [key, setKey] = useState(0)
@@ -34,17 +35,18 @@ export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
     const Workout = () => {
         return(
             
-            <div> 
-                <h1 className = "wodc"> WODC </h1> 
-                <div className="workout">{workouts[index]}</div>    
+            <div>
+                <h1 className = "wodc"> WODC </h1>
+                <div className="workout">{workouts[index]}</div>
             </div>
-            
+
         )
     }
 
     const updateIndex = () => {
         if (index + 1 >= workouts.length) {
             storeWorkoutDate(uid).then(setFinished(true))
+            UpdateBadges(uid)
         }
         setIndex(index + 1);
     }
@@ -62,7 +64,7 @@ export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
                     </div>
                     : null
                 }
-                <div className="workout-index">{index + 1}/{workouts.length}</div> 
+                <div className="workout-index">{index + 1}/{workouts.length}</div>
                 <div className="timer"> <UrgeWithPleasureComponent className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying}/></div>
             </div>
         </div>

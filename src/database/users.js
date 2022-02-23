@@ -106,7 +106,7 @@ export function set_injury_location(injury_location, UName, UEmail){
 export async function storeWorkoutDate(uid) {
     const today = new Date(Date.now());
     return await update(ref(db, 'users/' + uid + "/workouts/"), {
-        [today.getFullYear() + "_" + today.getMonth() + "_" + today.getDate() + "1"]: "None",
+        [today.getFullYear() + "_" + today.getMonth() + "_" + today.getDate()]: "None",
     }).catch((error) => {
         console.log(error);
     });
