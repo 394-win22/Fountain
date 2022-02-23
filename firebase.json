@@ -1,16 +1,29 @@
 {
-  "hosting": {
-    "public": "build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
+  "hosting": [ {
+      "target": "fountain-dev",  
+      "public": "build",  
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [{
         "source": "**",
         "destination": "/index.html"
-      }
-    ]
-  }
+      }]  
+    },
+    {
+      "target": "fountain-app",  
+      "public": "build",  
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [{
+        "source": "**",
+        "destination": "/index.html"
+      }]  
+    }
+  ]
 }
