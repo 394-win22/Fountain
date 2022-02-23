@@ -14,6 +14,15 @@ export async function fetch_badges(uid) {
     });
 }
 
+export async function fetch_badge_image(badge) {
+    const path = '/badges/'+ badge;
+    return await get(ref(db, path)).then((snapshot) => {
+        return snapshot;
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+
 export async function storeBadge(uid, badgeName) {
     const today = new Date(Date.now());
     return await update(ref(db, 'users/' + uid + "/badges/"), {
