@@ -36,7 +36,7 @@ export const useUserState = ({setUEmail, setUName, setUid}) => {
 };
 
 export function make_user(uid, name, email, photoUrl){
-    set(ref(db, 'users/' + uid), {
+    update(ref(db, 'users/' + uid), {
         userID: uid,
         userName: name,
         userEmail: email,
