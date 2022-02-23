@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "fountain-37243"
+  },
+  "targets": {
+    "fountain-37243": {
+      "hosting": {
+        "fountain-dev": [
+          "fountain-develop"
+        ],
+        "fountain-app": [
+          "fountain-37243"
+        ]
+      }
+    }
   }
 }
