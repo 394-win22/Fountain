@@ -1,7 +1,7 @@
 import {getAuth, GoogleAuthProvider, onIdTokenChanged, signInWithPopup, signOut, onAuthStateChanged} from 'firebase/auth';
 import {firebase} from './firebase'
 import {useState, useEffect} from "react";
-import { get, ref, set, update} from "firebase/database";
+import { get, ref, update} from "firebase/database";
 import {db} from "./firebase";
 
 
@@ -30,7 +30,7 @@ export const useUserState = ({setUEmail, setUName, setUid}) => {
                 setUid(user.uid)
             }
         })
-    }, []);
+    }, [setUEmail, setUName, setUid]);
 
     return [user];
 };
