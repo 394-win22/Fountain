@@ -110,7 +110,7 @@
 
 .sign-out{
   width:100%;
-  
+
 }
 
 
@@ -148,7 +148,7 @@
 .workout-wrapper{
   margin-top:60px;
 
-  
+
 }
 
 .wodc{
@@ -190,11 +190,14 @@
   text-align: center;
 }
 
-.time-wrapper{
+.timewrapper{
+  background-color: #696969;
+  color: white;
+  border-radius: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 17rem));
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
 }
-
-
-
-
