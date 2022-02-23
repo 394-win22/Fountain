@@ -21,25 +21,21 @@ export function Profile() {
                 setName(value.val().userName)
                 setEmail(value.val().userEmail)
                 setPhoto(value.val().userPhoto)
-                fetch_badges(id).then(value =>
-                    { 
-                        let badgeDict = {};
-                        let imageDict = {};
-                        const keys= Object.keys(value);
-                        keys.map(key => {
-                            badgeDict[key]= value[key];
-                            console.log(key);
-                            fetch_badge_image(key).then(value=>{
-                                imageDict[key] = value.val().image;
-                            })
-                        } ); 
-                        setBadges(badgeDict);
-                        setBadgeImages(imageDict);
-                        console.log(badgeImages);
-                        
-                    })
             }
         );
+        fetch_badges(id).then(value =>
+            { 
+                let imageDict = {};
+                const keys= Object.keys(value);
+                keys.map(key => {
+                    fetch_badge_image(key).then(value=>{
+                        imageDict[key] = value.val().image;
+                    })
+                }); 
+                setBadgeImages(imageDict);
+                console.log(badgeImages);
+                
+            })
     }, []);
 
     return (
@@ -51,7 +47,7 @@ export function Profile() {
                 <div className="col-sm-6">
                     <div>Your Name: {name ? name : "NULL"}</div>
                     <div>Your email: {email ? email : "NULL"}</div>
-                    <div className = "badges"> {Object.keys(badges).map(key => <div>{badgeImages[key]}</div>)} </div>
+                    <div className = "badges"> {Object.keys(badgeImages).map(key => <div>{key}</div>)} </div>
                 </div>
             </div>
         </div>
