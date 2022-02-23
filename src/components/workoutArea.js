@@ -34,7 +34,7 @@ export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
 
     const Workout = () => {
         return(
-            
+
             <div>
                 <h1 className = "wodc"> WODC </h1>
                 <div className="workout">{workouts[index]}</div>
@@ -55,7 +55,9 @@ export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
         <div>
             <Workout />
             <div className="gif-wrapper"> <img className="gif" src= {gifs[index]}></img></div>
-            <div className="timer-wrapper">
+            <div className="timewrapper">
+
+                <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>
                 { index < 5 ?
                     <div className = "timer-button">
                         { playing ?
@@ -64,7 +66,6 @@ export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
                     </div>
                     : null
                 }
-                <div className="workout-index">{index + 1}/{workouts.length}</div>
                 <div className="timer"> <UrgeWithPleasureComponent className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying}/></div>
             </div>
         </div>
