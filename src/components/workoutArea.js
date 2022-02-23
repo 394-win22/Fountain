@@ -27,15 +27,18 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying}){
     </CountdownCircleTimer>)
 }
 
-export function WorkoutArea({ workouts, setFinished, uid}) {
+export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
     const [playing, setPlaying] = useState(false);
     const [index, setIndex] = useState(0);
 
     const Workout = () => {
         return(
             
-            <div> <h1 className = "wodc"> WODC </h1> 
-            <div className="workout">{workouts[index]}</div><div className="workout-index">{index + 1}/{workouts.length}</div> </div>
+            <div> 
+                <h1 className = "wodc"> WODC </h1> 
+                <div className="workout">{workouts[index]}</div>    
+            </div>
+            
         )
     }
 
@@ -49,15 +52,20 @@ export function WorkoutArea({ workouts, setFinished, uid}) {
     return (
         <div>
             <Workout />
-            { index < 5 ?
-                <div className = "timer-button">
-                    { playing ?
-                        <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(false)}>Pause</button>:
-                        <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(true)}>Start</button>}
-                </div>
-                : null
-            }
-            <div className="timer"> <UrgeWithPleasureComponent className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying}/></div>
+            <div className="gif-wrapper"> <img className="gif" src= {gifs[index]}></img></div>
+            <div className="timer-wrapper">
+                { index < 5 ?
+                    <div className = "timer-button">
+                        { playing ?
+                            <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(false)}>Pause</button>:
+                            <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(true)}>Start</button>}
+                    </div>
+                    : null
+                }
+                <div className="workout-index">{index + 1}/{workouts.length}</div> 
+                <div className="timer"> <UrgeWithPleasureComponent className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying}/></div>
+            </div>
         </div>
+
     )
 }

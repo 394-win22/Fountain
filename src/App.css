@@ -180,3 +180,21 @@
 .workout-finished{
   text-align: center;
 }
+
+.gif{
+  height:400px;
+  width:400px;
+}
+
+.gif-wrapper{
+  text-align: center;
+}
+
+.time-wrapper{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 17rem));
+}
+
+
+
+
