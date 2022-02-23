@@ -14,10 +14,14 @@ export async function fetch_badges(uid) {
     });
 }
 
-export async function fetch_badge_image(badge) {
-    const path = '/badges/'+ badge;
+export async function fetch_badge_image() {
+    const path = '/badges/';
     return await get(ref(db, path)).then((snapshot) => {
-        return snapshot;
+        const ImgDic = {};
+        snapshot.forEach((val) => {
+            ImgDic[val.key] = val.val();
+        });
+        return ImgDic;
     }).catch((error) => {
         console.error(error);
     });
