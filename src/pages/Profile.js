@@ -47,7 +47,7 @@ export function Profile() {
                 <div className="col-sm-6">
                     <div>Your Name: {name ? name : "NULL"}</div>
                     <div>Your email: {email ? email : "NULL"}</div>
-                    <div className = "badges"> {Object.keys(badgeImages).map(key => <div>{key}</div>)} </div>
+                    <div> {Object.keys(badgeImages).map(key => <div>BADGE</div>)} </div>
                 </div>
             </div>
         </div>
