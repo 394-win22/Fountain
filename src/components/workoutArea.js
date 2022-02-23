@@ -6,10 +6,10 @@ import {UpdateBadges, updateBadges} from "./badegs";
 function displayMessage (remTime){
     let message = null;
     const messages = ["Let's get started on this",
-        "You're almost there", 
-        "Finish Strong", 
+        "You're almost there",
+        "Finish Strong",
         "Way to go"]
-    
+
     if (remTime <= 120 && remTime > 110 ){
         message = messages[0]
     }
@@ -50,23 +50,17 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying}){
             let seconds = remainingTime % 60;
             setRemTime((minutes*60) + seconds)
             if (seconds <10){
-                seconds = "0"+seconds;  
+                seconds = "0"+seconds;
             }
             return `${minutes}:${seconds}`}
         }
     </CountdownCircleTimer>
     {displayMessage(remTime)}
     </>)
-    
+
 }
 
-<<<<<<< HEAD
 export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
-=======
-
-
-export function WorkoutArea({ workouts, setFinished, uid}) {
->>>>>>> 860f587... display message
     const [playing, setPlaying] = useState(false);
     const [index, setIndex] = useState(0);
 
