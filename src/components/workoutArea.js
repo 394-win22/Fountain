@@ -1,15 +1,15 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {CountdownCircleTimer} from "react-countdown-circle-timer";
 import {storeWorkoutDate} from "../database/users";
-import {UpdateBadges, updateBadges} from "./badegs";
+import {UpdateBadges} from "./badegs";
 
 function displayMessage (remTime){
     let message = null;
     const messages = ["Let's get started on this",
-        "You're almost there", 
-        "Finish Strong", 
+        "You're almost there",
+        "Finish Strong",
         "Way to go"]
-    
+
     if (remTime <= 120 && remTime > 110 ){
         message = messages[0]
     }
@@ -50,14 +50,14 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying}){
             let seconds = remainingTime % 60;
             setRemTime((minutes*60) + seconds)
             if (seconds <10){
-                seconds = "0"+seconds;  
+                seconds = "0"+seconds;
             }
             return `${minutes}:${seconds}`}
         }
     </CountdownCircleTimer>
     {displayMessage(remTime)}
     </>)
-    
+
 }
 
 export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
@@ -86,7 +86,7 @@ export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
     return (
         <div>
             <Workout />
-            <div className="gif-wrapper"> <img className="gif" src= {gifs[index]}></img></div>
+            <div className="gif-wrapper"> <img className="gif" src= {gifs[index]} alt={"gif"}/></div>
             <div className="timewrapper">
 
                 <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>

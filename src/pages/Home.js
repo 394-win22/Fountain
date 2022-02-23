@@ -1,10 +1,6 @@
 import React from "react";
-import {Card} from "react-bootstrap";
-import {useNavigate} from 'react-router-dom';
-import {SignInButton, SignOutButton} from "../components/users";
 import {fetch_workouts} from "../database/workout";
 import {useEffect, useState} from 'react';
-import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import {WorkoutArea} from "../components/workoutArea";
 import {WorkoutFinished} from "../components/workoutFinished";
 

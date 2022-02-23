@@ -23,7 +23,7 @@ export function Profile() {
         fetch_badge_image().then(value => {
             setBadgeImages(value);
         });
-    }, []);
+    }, [uid]);
 
     return (
         <div className="container mt-5">

@@ -1,6 +1,4 @@
-import {firebase} from './firebase'
-import {useState, useEffect} from "react";
-import {child, get, orderByChild, ref, set, remove, update} from "firebase/database";
+import {get, ref} from "firebase/database";
 import {db} from "./firebase";
 
 
