@@ -10,6 +10,7 @@ export function WorkoutFinished() {
             }} >
                 copy to clipboard
             </button>
+            <div><a href="https://www.facebook.com/groups/fountainfit/"> Share on Fountain Facebook </a></div>
         </div>
     );
 }
