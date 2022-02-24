@@ -10,6 +10,7 @@ import {Profile} from "./pages/Profile";
 import {Navbar, NavbarBrand, Container} from "react-bootstrap";
 import {Burger} from "./Burger/Burger";
 import {Menu} from "./Menu/Menu";
+import Start from "./pages/Start";
 
 function App() {
   const [uid, setUid] = useState("")
@@ -37,6 +38,7 @@ function App() {
                     <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
                                                                 setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
                     <Route path="/home" element={<Home setUEmail={setUEmail} setUName={setUName} uid={uid}/>} />
+                    <Route path="/start" element={<Start />} />
                     <Route path="profile/:uid" element={<Profile />} />
                 </Routes>
             </BrowserRouter>

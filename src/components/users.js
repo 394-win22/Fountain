@@ -11,7 +11,7 @@ export function SignInButton({ setUName }){
         signInWithGoogle().then(([uid, email, name, photoUrl]) => {
             setUName(name);
             make_user(uid, name, email, photoUrl);
-            navigate('/home');
+            navigate('/start');
         })
     }} >Login</button></div>
     )
@@ -31,5 +31,5 @@ export function SignOutButton({ setUEmail, setUName, setUid }){
     }}>Logout</button></div>
 
     )
-    
+
 }
