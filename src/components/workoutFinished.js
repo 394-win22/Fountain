@@ -5,14 +5,11 @@ import {useEffect, useState} from "react";
 import {get_user} from "../database/users";
 
 export function WorkoutFinished() {
-    const today = new Date(Date.now());
     const { uid } = useParams();
-    const [name, setName] = useState("");
     const [photo, setPhoto] = useState("");
   
     useEffect(() => {
         get_user(uid).then(value => {
-            setName(value.val().userName)
             setPhoto(value.val().userPhoto)
         });
     }, [uid]);
