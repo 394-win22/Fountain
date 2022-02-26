@@ -6,13 +6,11 @@ import {get_user} from "../database/users";
 function Start() {
   const { uid } = useParams();
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
   const [photo, setPhoto] = useState("");
 
   useEffect(() => {
       get_user(uid).then(value => {
           setName(value.val().userName)
-          setEmail(value.val().userEmail)
           setPhoto(value.val().userPhoto)
       });
   }, [uid]);
