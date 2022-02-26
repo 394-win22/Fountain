@@ -13,7 +13,7 @@ function displayMessage (remTime){
     if (remTime <= 120 && remTime > 110 ){
         message = messages[0]
     }
-    else if (remTime <= 60 && remTime > 50){
+    else if (remTime <= 100 && remTime > 50){
         message = messages[1]
     }
     else if (remTime <= 30 && remTime > 20){
@@ -24,12 +24,13 @@ function displayMessage (remTime){
     }
     return (
         <div>
-            {message }
+            {message}
         </div>
     )
 }
 
-function UrgeWithPleasureComponent({playing, updateIndex, setPlaying}){
+
+function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemTime}){
     const [remTime, setRemTime] = useState(2);
     const [key, setKey] = useState(0)
     return (<>
@@ -49,13 +50,13 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying}){
             const minutes = Math.floor(remainingTime / 60);
             let seconds = remainingTime % 60;
             setRemTime((minutes*60) + seconds)
+            setOutRemTime(remTime);
             if (seconds <10){
                 seconds = "0"+seconds;
             }
             return `${minutes}:${seconds}`}
         }
     </CountdownCircleTimer>
-    {displayMessage(remTime)}
     </>)
 
 }
@@ -63,10 +64,9 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying}){
 export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
     const [playing, setPlaying] = useState(false);
     const [index, setIndex] = useState(0);
-
+    const [outRemTime, setOutRemTime] = useState(2);
     const Workout = () => {
         return(
-
             <div>
                 <h1 className = "wodc"> WODC </h1>
                 <div className="workout">{workouts[index]}</div>
@@ -87,8 +87,8 @@ export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
         <div>
             <Workout />
             <div className="gif-wrapper"> <img className="gif" src= {gifs[index]} alt={"gif"}/></div>
+            {displayMessage(outRemTime)}
             <div className="timewrapper">
-
                 <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>
                 { index < 5 ?
                     <div className = "timer-button">
@@ -98,7 +98,7 @@ export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
                     </div>
                     : null
                 }
-                <div className="timer"> <UrgeWithPleasureComponent className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying}/></div>
+                <div className="timer"> <UrgeWithPleasureComponent setOutRemTime={setOutRemTime} className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying}/></div>
             </div>
         </div>
 
