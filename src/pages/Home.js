@@ -3,8 +3,10 @@ import {fetch_workouts} from "../database/workout";
 import {useEffect, useState} from 'react';
 import {WorkoutArea} from "../components/workoutArea";
 import {WorkoutFinished} from "../components/workoutFinished";
+import {useParams} from "react-router-dom";
 
-function Home({uid}) {
+function Home() {
+    const { uid } = useParams()
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
     const [finished, setFinished] = useState(false);

@@ -217,21 +217,6 @@
   background-color: #FFB6C1;
 }
 
-.communitybutton:link, .communitybutton:visited {
-  background-color: #0000FF;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 12px;
-  width: 400px;
-  margin: 25% 0;
-  font-size: 50px;
-}
-
-.communitybutton:hover, .communitybutton:active {
-  background-color: #ADD8E6;
-}
 
 .startwrapper{
   display: grid;
