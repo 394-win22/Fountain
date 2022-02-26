@@ -21,6 +21,7 @@ function Start() {
         <div>Welcome back {name ? name : "NULL"}!</div>
         <img className = "profile-photo" src={photo} alt="UserPhoto"/>
         <div>Workout Of The Day Challenge (WODC)</div>
+
         <a className="startbutton" href="/countdown">Begin Workout of the Day</a>
         <div className="card m-1 p-2 startwrapper"> 
           <div>
@@ -29,7 +30,7 @@ function Start() {
           <div>
             <img src="https://firebasestorage.googleapis.com/v0/b/fountain-37243.appspot.com/o/badge1.jpg?alt=media&token=77ce3782-3428-4f95-ba5e-1567661136dc"alt="badge working towards"/>
           </div>
-          <a href="/home">Review Workout</a>
+          <a href={"/preview/"+uid}>Review Workout</a>
         </div>
       </div>
     </>

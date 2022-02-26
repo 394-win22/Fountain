@@ -112,3 +112,11 @@ export async function storeWorkoutDate(uid) {
     });
 }
 
+export async function fetchWorkoutDate(uid) {
+    return await get(ref(db, 'users/' + uid + "/workouts/")).then(snapshot => {
+        return snapshot.val()
+    }).catch((error) => {
+        console.log(error);
+    });
+}
+

@@ -3,6 +3,7 @@ import {CountdownCircleTimer} from "react-countdown-circle-timer";
 import {storeWorkoutDate} from "../database/users";
 import {UpdateBadges} from "./badegs";
 
+
 function displayMessage (remTime){
     let message = null;
     const messages = ["Let's get started on this",
@@ -61,7 +62,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
 
 }
 
-export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
+export function WorkoutArea({ workouts, setRemTime, gifs, setFinished, uid}) {
     const [playing, setPlaying] = useState(false);
     const [index, setIndex] = useState(0);
     const [outRemTime, setOutRemTime] = useState(2);
@@ -88,13 +89,15 @@ export function WorkoutArea({ workouts, gifs, setFinished, uid}) {
             <Workout />
             <div className="gif-wrapper"> <img className="gif" src= {gifs[index]} alt={"gif"}/></div>
             {displayMessage(outRemTime)}
-            <div className="timewrapper">
+            <div className="timewrapper"> 
+            
                 <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>
                 { index < 5 ?
                     <div className = "timer-button">
                         { playing ?
                             <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(false)}>Pause</button>:
                             <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(true)}>Start</button>}
+                            <button type="button" className="btn btn-outline-dark" onClick={()=> [setIndex((index + 1) % 5), setRemTime(2)]}>Skip</button>
                     </div>
                     : null
                 }
