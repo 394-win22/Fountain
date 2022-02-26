@@ -56,6 +56,10 @@
   text-align: center;
 }
 
+.displayMessage {
+  text-align: center;
+  margin: 10px;
+}
 .message-btn{
   margin-top: 2vh;
 }
