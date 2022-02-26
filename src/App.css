@@ -225,3 +225,17 @@
   align-content: space-evenly;
   align-items: center;
 }
+
+.timer-wrapper {
+  display: grid;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+  font-size: 48px;
+  font-family: "Montserrat";
+  height: 88vh;
+  color: #FFFFFF;
+  background-color: #e73323;
+}
+

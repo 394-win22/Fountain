@@ -11,6 +11,7 @@ import {Navbar, NavbarBrand, Container} from "react-bootstrap";
 import {Burger} from "./Burger/Burger";
 import {Menu} from "./Menu/Menu";
 import Start from "./pages/Start";
+import Countdown from "./pages/Timer";
 
 function App() {
   const [uid, setUid] = useState("")
@@ -40,6 +41,7 @@ function App() {
                     <Route path="/home" element={<Home setUEmail={setUEmail} setUName={setUName} uid={uid}/>} />
                     <Route path="start/:uid" element={<Start />} />
                     <Route path="profile/:uid" element={<Profile />} />
+                    <Route path="/countdown" element={<Countdown />} />
                 </Routes>
             </BrowserRouter>
       </div>
