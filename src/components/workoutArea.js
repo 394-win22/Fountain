@@ -58,6 +58,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
             return `${minutes}:${seconds}`}
         }
     </CountdownCircleTimer>
+    
     </>)
 
 }
@@ -88,7 +89,7 @@ export function WorkoutArea({ workouts, setRemTime, gifs, setFinished, uid}) {
         <div>
             <Workout />
             <div className="gif-wrapper"> <img className="gif" src= {gifs[index]} alt={"gif"}/></div>
-            {displayMessage(outRemTime)}
+            <div className = "displayMessage">{displayMessage(outRemTime)}</div>
             <div className="timewrapper"> 
             
                 <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>
@@ -97,7 +98,7 @@ export function WorkoutArea({ workouts, setRemTime, gifs, setFinished, uid}) {
                         { playing ?
                             <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(false)}>Pause</button>:
                             <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(true)}>Start</button>}
-                            <button type="button" className="btn btn-outline-dark" onClick={()=> [setIndex((index + 1) % 5), setRemTime(2)]}>Skip</button>
+                            <button type="button" className="btn btn-outline-dark" onClick={()=> [setIndex((index + 1) % 5), setRemTime(2)]}>Next One</button>
                     </div>
                     : null
                 }
