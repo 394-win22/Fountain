@@ -22,7 +22,7 @@ function Start() {
         <img className = "profile-photo" src={photo} alt="UserPhoto"/>
         <div>Workout Of The Day Challenge (WODC)</div>
 
-        <a className="startbutton" href="/countdown">Begin Workout of the Day</a>
+        <a className="startbutton" href={"/countdown/"+uid}>Begin Workout of the Day</a>
         <div className="card m-1 p-2 startwrapper"> 
           <div>
             Complete this class and earn your two week acheivement badge!

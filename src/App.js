@@ -46,7 +46,7 @@ function App() {
                     <Route path="/start/:uid" element={<Start />} />
                     <Route path="/profile/:uid" element={<Profile />} />
                     <Route path="/preview/:uid" element={<Preview />} />
-                    <Route path="/countdown" element={<Countdown />} />
+                    <Route path="/countdown/:uid" element={<Countdown />} />
 
                 </Routes>
             </BrowserRouter>

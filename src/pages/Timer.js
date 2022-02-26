@@ -1,12 +1,14 @@
 import React from "react";
 import {CountdownCircleTimer} from "react-countdown-circle-timer";
 import {useNavigate} from 'react-router-dom';
+import {useParams} from "react-router-dom";
 
 
 
 
 
-function UrgeWithPleasureComponent(){
+function Timer(){
+    const { uid } = useParams();
     const navigate = useNavigate();
     return (
         
@@ -18,7 +20,7 @@ function UrgeWithPleasureComponent(){
         colors={['#FFFFFF']}
         colorsTime={[3]}
         onComplete={() => {
-            navigate('/home');
+            navigate('/home/'+uid);
         }}
         >
         {({ remainingTime, color }) => <span style={{ color }}>
@@ -35,7 +37,7 @@ function Countdown() {
         <div>
             WODC
         </div>
-        <UrgeWithPleasureComponent />
+        <Timer />
         <div>
             Are you ready?!
         </div>
