@@ -36,7 +36,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
     const [key, setKey] = useState(0)
     useEffect(()=>{
         setKey(skipKey)
-    })
+    }, [skipKey])
     return (<>
         <div id="l">
 <CountdownCircleTimer
