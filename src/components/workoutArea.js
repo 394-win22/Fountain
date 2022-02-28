@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {CountdownCircleTimer} from "react-countdown-circle-timer";
 import {storeWorkoutDate} from "../database/users";
 import {UpdateBadges} from "./badegs";
@@ -31,12 +31,17 @@ function displayMessage (remTime){
 }
 
 
-function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemTime}){
+function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemTime, skipKey}){
     const [remTime, setRemTime] = useState(2);
     const [key, setKey] = useState(0)
+    useEffect(()=>{
+        setKey(skipKey)
+    })
     return (<>
+        <div id="l">
 <CountdownCircleTimer
         isPlaying={playing}
+        className="x"
         duration={120}
         key={key}
         colors={['#004777', '#F7B801', '#A30000', '#A30000']}
@@ -58,7 +63,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
             return `${minutes}:${seconds}`}
         }
     </CountdownCircleTimer>
-    
+    </div>
     </>)
 
 }
@@ -66,6 +71,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
 export function WorkoutArea({ workouts, setRemTime, gifs, setFinished, uid}) {
     const [playing, setPlaying] = useState(false);
     const [index, setIndex] = useState(0);
+    const [skipKey, setSkipKey] = useState(0)
     const [outRemTime, setOutRemTime] = useState(2);
     const Workout = () => {
         return(
@@ -98,11 +104,13 @@ export function WorkoutArea({ workouts, setRemTime, gifs, setFinished, uid}) {
                         { playing ?
                             <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(false)}>Pause</button>:
                             <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(true)}>Start</button>}
-                            <button type="button" className="btn btn-outline-dark" onClick={()=> [setIndex((index + 1) % 5), setRemTime(2)]}>Next One</button>
+                            <button type="button" className="btn btn-outline-dark" onClick={()=> {setIndex((index + 1) % 5)
+                                setSkipKey(Math.floor(Math.random()*10000000))
+                            }}>Next One</button>
                     </div>
                     : null
                 }
-                <div className="timer"> <UrgeWithPleasureComponent setOutRemTime={setOutRemTime} className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying}/></div>
+                <div className="timer"> <UrgeWithPleasureComponent setOutRemTime={setOutRemTime} className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying} skipKey={skipKey}/></div>
             </div>
         </div>
 
