@@ -3,7 +3,6 @@ import {useEffect, useState} from "react";
 import {get_user} from "../database/users";
 import {add_number} from "../database/users";
 import {fetch_badges, fetch_badge_image} from "../database/badges";
-import { element } from "prop-types";
 
 export function Profile() {
     const { uid } = useParams()
