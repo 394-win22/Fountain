@@ -18,9 +18,9 @@ function Start() {
     <>
       <div className="startwrapper">
         
-        <div>Welcome back {name ? name : "NULL"}!</div>
+        <div className="welcome-back">Welcome back {name ? name : "NULL"}!</div>
         <img className = "profile-photo" src={photo} alt="UserPhoto"/>
-        <div>Workout Of The Day Challenge (WODC)</div>
+        <div className="wodc-start">Workout Of The Day Challenge (WODC)</div>
 
         <a className="startbutton" href={"/countdown/"+uid}>Begin Workout of the Day</a>
         <div className="card m-1 p-2 startwrapper"> 

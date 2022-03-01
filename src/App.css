@@ -211,15 +211,17 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border-radius: 12px;
-  width: 400px;
-  margin: 25% 0;
-  font-size: 50px;
+  border-radius: 80px;
+  width: 350px;
+  margin: 5% 0;
+  font-size: 20px;
+  padding:5px;
 }
 
 .startbutton:hover, .startbutton:active {
   background-color: #FFB6C1;
 }
+
 
 
 .startwrapper{
@@ -248,6 +250,17 @@
   width: 120px;
   border: 3px solid #FFB6C1;
   margin-top: 20px;
+
+}
+
+.welcome-back{
+  font-size:30px;
+  text-align: center;
+}
+
+.wodc-start{
+  font-size:20px;
+  padding-top:10px;
 
 }
 
