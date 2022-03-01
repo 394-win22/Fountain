@@ -1,13 +1,16 @@
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {get_user} from "../database/users";
+import {add_number} from "../database/users";
 import {fetch_badges, fetch_badge_image} from "../database/badges";
+import { element } from "prop-types";
 
 export function Profile() {
     const { uid } = useParams()
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [photo, setPhoto] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
     const [badges, setBadges] = useState()
     const [badgeImages, setBadgeImages] = useState()
 
@@ -16,6 +19,8 @@ export function Profile() {
             setName(value.val().userName)
             setEmail(value.val().userEmail)
             setPhoto(value.val().userPhoto)
+            setPhoneNumber(value.val().userPhoneNumber)
+
         });
         fetch_badges(uid).then(value => {
             setBadges(value);
@@ -34,9 +39,20 @@ export function Profile() {
                 <div className="col-sm-6">
                     <div>Your Name: {name ? name : "NULL"}</div>
                     <div>Your email: {email ? email : "NULL"}</div>
+                    <div> Your Number: {phoneNumber? phoneNumber: 
+                    <form>
+                        <label>
+                            
+                            <input type="text" name="number" onChange={number => add_number(uid,number.target.value)}/>
+                        </label>
+                        <input type="submit" value="Submit" />
+                    </form>}
+                    </div>
                     {badges && badgeImages? <div> {Object.keys(badges).map(key => {
                         return <img src={badgeImages[key].image} width="100" alt={key}/>
                     })} </div> : null}
+                    
+                    
                 </div>
             </div>
         </div>
