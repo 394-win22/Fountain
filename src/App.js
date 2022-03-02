@@ -31,8 +31,8 @@ function App() {
                         <img className="d-inline-block align-top" src={logo} alt="logo" height="60"/>
                     </NavbarBrand>
                 </Container>
-                <div>
-                    <Burger open={open} setOpen={setOpen} />
+                <div >
+                    <Burger  open={open} setOpen={setOpen} />
                     <Menu open={open} setOpen={setOpen} uid={uid} setUid={setUid}/>
                 </div>
             </Navbar> : null}
