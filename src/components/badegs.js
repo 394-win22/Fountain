@@ -1,6 +1,5 @@
 import {fetch_badges, storeBadge} from "../database/badges";
 import {fetchWorkoutDate} from "../database/users";
-import {log} from "@tensorflow/tfjs";
 
 export function UpdateBadges(uid) {
     fetchWorkoutDate(uid).then(workoutData => {
