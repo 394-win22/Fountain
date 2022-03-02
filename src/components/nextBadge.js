@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {get_user} from "../database/users";
 import {fetch_badge_image, fetch_badges} from "../database/badges";
 
 const badgeList = [
