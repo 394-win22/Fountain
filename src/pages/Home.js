@@ -7,6 +7,7 @@ import {useParams} from "react-router-dom";
 
 function Home() {
     const { uid } = useParams()
+    const [workoutNumbers, setWorkoutNumbers] = useState([]);
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
     const [finished, setFinished] = useState(false);
@@ -18,6 +19,7 @@ function Home() {
             // setWorkouts(workOutArr);
 
             //hardcode in workout for now
+            setWorkoutNumbers([26,3,0,10,32]);
             const workOutArr = [value[26]["Exercise Name"], value[3]["Exercise Name"], value[0]["Exercise Name"], value[10]["Exercise Name"], value[32]["Exercise Name"]];
             setWorkouts(workOutArr);
             const gifArr = [value[26]["Image"], value[3]["Image"], value[0]["Image"], value[10]["Image"], value[32]["Image"]];
@@ -30,7 +32,7 @@ function Home() {
         <div className="home-wrapper m-3">
             {finished ?
                 <WorkoutFinished />
-                : <WorkoutArea workouts={workouts} gifs={gifs} setFinished={setFinished} uid={uid}/>
+                : <WorkoutArea workouts={workouts} workoutNumbers={workoutNumbers} gifs={gifs} setFinished={setFinished} uid={uid}/>
             }
         </div>
     );

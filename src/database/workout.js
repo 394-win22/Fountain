@@ -15,3 +15,14 @@ export async function fetch_workouts() {
     });
 }
 
+export async function fetch_instructions(workoutNumber) {
+    const path = '/workouts/'+workoutNumber;
+    return await get(ref(db, path)).then((snapshot) => {
+        return snapshot.val().Instructions;
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+
+
+
