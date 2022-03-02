@@ -15,3 +15,16 @@ export async function fetch_workouts() {
     });
 }
 
+
+export function pseudorandom(seed, iteration) {
+
+    seed = Math.abs(seed % 2147483647) + 1;
+    for (let i = 0; i < iteration +1; i++)
+    {
+        seed = seed * 1344564785924 % 2147483647;
+    }
+
+    seed = (seed - 1) /2147483646;
+
+    return seed;
+}

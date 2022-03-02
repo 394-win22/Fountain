@@ -1,5 +1,5 @@
 import React from "react";
-import {fetch_workouts} from "../database/workout";
+import {fetch_workouts, pseudorandom} from "../database/workout";
 import {useEffect, useState} from 'react';
 import {WorkoutArea} from "../components/workoutArea";
 import {WorkoutFinished} from "../components/workoutFinished";
@@ -16,12 +16,23 @@ function Home() {
             // let random = value.sort(() => .5 - Math.random()).slice(0,5);
             // const workOutArr = random.map(x => x["Exercise Name"]);
             // setWorkouts(workOutArr);
-
+            let date1 = new Date("03/01/2022");
+            const d = new Date();
+            let time = d.getTime();
+            let difference = time - date1;
+            let diffdays = Math.round(difference / (1000 * 3600 * 24));
             //hardcode in workout for now
-            const workOutArr = [value[26]["Exercise Name"], value[3]["Exercise Name"], value[0]["Exercise Name"], value[10]["Exercise Name"], value[32]["Exercise Name"]];
+            let workOutArr = []
+            let gifArr = []
+            for (let i = 1; i < 6; i++)
+            {
+                workOutArr.push(value[parseInt(60*pseudorandom(diffdays,i))]["Exercise Name"]);
+                gifArr.push(value[parseInt(60*pseudorandom(diffdays,i))]["Image"])
+            }
+            
             setWorkouts(workOutArr);
-            const gifArr = [value[26]["Image"], value[3]["Image"], value[0]["Image"], value[10]["Image"], value[32]["Image"]];
             setGifs(gifArr)
+            
     })
     }, []);
     
