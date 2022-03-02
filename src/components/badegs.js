@@ -1,5 +1,6 @@
 import {fetch_badges, storeBadge} from "../database/badges";
 import {fetchWorkoutDate} from "../database/users";
+import {log} from "@tensorflow/tfjs";
 
 export function UpdateBadges(uid) {
     fetchWorkoutDate(uid).then(workoutData => {
@@ -49,7 +50,7 @@ export function UpdateBadges(uid) {
 
             for (let i = 1; i <= 25; i++) {
                 let d = new Date(Date.now());
-                d.setDate(d.getDate() - i - 1);
+                d.setDate(d.getDate() - (i - 1));
                 if (!workoutData[d.getFullYear() + "_" + d.getMonth() + "_" + d.getDate()]) {
                     break
                 }
