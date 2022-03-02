@@ -75,6 +75,7 @@ export function WorkoutArea({ workouts, workoutNumbers, setRemTime, gifs, setFin
     const [skipKey, setSkipKey] = useState(0)
     const [outRemTime, setOutRemTime] = useState(2);
     const [messages, setMessages] = useState(null);
+
     const Workout = () => {
         return(
             <div>
@@ -95,8 +96,6 @@ export function WorkoutArea({ workouts, workoutNumbers, setRemTime, gifs, setFin
    
     useEffect(() => {
         fetch_instructions(workoutNumbers[index]).then(val =>{
-            console.log(workoutNumbers[index]);
-            console.log(val);
             var instructionsArray = []
             instructionsArray.push(val.Line1);
             instructionsArray.push(val.Line2);
