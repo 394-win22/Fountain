@@ -39,9 +39,9 @@ export function NextBadge({uid}) {
     }, [uid]);
 
     return (
-        <div className="card m-1 p-2 startwrapper">
+        <div >
             {badges&&badgeImages?
-                <div>
+                <div className="card m-1 p-2 startwrapper">
                     <div>
                         Complete this class and earn your "{badgeList[nxt][1]}" badge!
 
@@ -49,7 +49,7 @@ export function NextBadge({uid}) {
                     <div>
                         <img src={badgeImages[badgeList[nxt][0]].image} alt="badge working towards"/>
                     </div>
-                    <a href={"/preview/"+uid}>Review Workout</a>
+                    <a className="reviewbutton" href={"/preview/"+uid}>Review Workout</a>
                 </div>
                 : null
             }
