@@ -19,15 +19,13 @@ jobs:
     name: Cypress test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.4.0
-      - uses: expo/expo-github-action@v7
-        with:
-          expo-version: latest
+      - uses: actions/checkout@v2
+      # https://www.cypress.io/blog/2019/11/20/drastically-simplify-your-testing-with-cypress-github-action/
       - uses: cypress-io/github-action@v2
         with:
-          build: expo build:web
-          start: expo start -w
-          wait-on: http://localhost:19006
+          build: npm run build
+          start: npm start
+          wait-on: http://localhost:3000
   
 
   deploy:
