@@ -3,13 +3,25 @@ import {db} from "./firebase";
 
 
 export async function fetch_workouts() {
-    const path = '/workouts';
-    return await get(ref(db, path)).then((snapshot) => {
-        const workOutsArray = [];
-        snapshot.forEach((val) => {
-            workOutsArray.push(val.val());
+    const today = new Date(Date.now());
+    const path = '/workoutList/' + today.getFullYear() + "_" + today.getMonth() + "_" + today.getDate();
+    return await get(ref(db, path)).then(async (snapshot) => {
+        return await get(ref(db, '/workouts')).then((workouts) => {
+            const workOutsArray = [];
+            const retArray = [];
+            workouts.forEach((val) => {
+                workOutsArray.push(val.val());
+            });
+            snapshot.forEach((val) => {
+                retArray.push(workOutsArray[val.val()]);
+            });
+            // if (retArray.length === 0) {
+            //    generate();
+            // }
+            return retArray;
+        }).catch((error) => {
+            console.error(error);
         });
-        return workOutsArray;
     }).catch((error) => {
         console.error(error);
     });
