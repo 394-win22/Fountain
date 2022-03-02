@@ -8,7 +8,8 @@ import {UpdateBadges} from "./badegs";
 
 function displayMessage (remTime, messages){
     let message = null;
-    if (messages){
+    if (messages) {
+        messages = Object.values(messages)
         if (remTime <= 120 && remTime > 110 ){
             message = messages[0]
         }
@@ -69,12 +70,11 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
 
 }
 
-export function WorkoutArea({ workouts, workoutNumbers, setRemTime, gifs, setFinished, uid}) {
+export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
     const [playing, setPlaying] = useState(false);
     const [index, setIndex] = useState(0);
     const [skipKey, setSkipKey] = useState(0)
     const [outRemTime, setOutRemTime] = useState(2);
-    const [messages, setMessages] = useState(null);
 
     const Workout = () => {
         return(
@@ -93,27 +93,12 @@ export function WorkoutArea({ workouts, workoutNumbers, setRemTime, gifs, setFin
         }
         setIndex(index + 1);
     }
-   
-    useEffect(() => {
-        fetch_instructions(workoutNumbers[index]).then(val =>{
-            var instructionsArray = []
-            instructionsArray.push(val.Line1);
-            instructionsArray.push(val.Line2);
-            instructionsArray.push(val.Line3); 
-            setMessages(instructionsArray);
-            
-        });    
-    }, [index]);
-     
-    
-    
-
 
     return (
         <div>
             <Workout />
             <div className="gif-wrapper"> <img className="gif" src= {gifs[index]} alt={"gif"}/></div>
-            <div className = "displayMessage">{displayMessage(outRemTime, messages)}</div>
+            <div className = "displayMessage">{displayMessage(outRemTime, instructions[index])}</div>
             <div className="timewrapper"> 
             
                 <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>
