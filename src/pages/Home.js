@@ -1,5 +1,5 @@
 import React from "react";
-import {fetch_workouts, pseudorandom} from "../database/workout";
+import {fetch_workouts} from "../database/workout";
 import {useEffect, useState} from 'react';
 import {WorkoutArea} from "../components/workoutArea";
 import {WorkoutFinished} from "../components/workoutFinished";
@@ -17,10 +17,10 @@ function Home() {
             let workOutArr = [];
             let gifArr = [];
             let instructionsArr = [];
-            Object.values(value).map((value) => {
-                workOutArr.push(value["Exercise Name"])
-                gifArr.push(value["Image"])
-                instructionsArr.push(value["Instructions"])
+            Object.values(value).forEach((val) => {
+                workOutArr.push(val["Exercise Name"])
+                gifArr.push(val["Image"])
+                instructionsArr.push(val["Instructions"])
             })
             setInstructions(instructionsArr);
             setWorkouts(workOutArr);

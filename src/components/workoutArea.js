@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {CountdownCircleTimer} from "react-countdown-circle-timer";
 import {storeWorkoutDate} from "../database/users";
-import {fetch_instructions} from "../database/workout";
 
 import {UpdateBadges} from "./badegs";
 
