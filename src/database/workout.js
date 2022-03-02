@@ -16,10 +16,10 @@ export async function fetch_workouts() {
                 retArray.push(workOutsArray[val.val()]);
             });
             if (retArray.length === 0) {
-                const ret = generate(path, workOutsArray.length);
-                for (let i = 0; i < ret.length; i ++) {
-                   retArray.push(workOutsArray[Object.values(ret[i])[0]]);
-                }
+                const ret = generate(path, workOutsArray);
+                Object.values(ret).forEach((value => {
+                    retArray.push(workOutsArray[value]);
+                }))
             }
             return retArray;
         }).catch((error) => {
@@ -30,14 +30,22 @@ export async function fetch_workouts() {
     });
 }
 
-function generate(path, totalWorkoutNum) {
+function generate(path, workoutArray) {
     let date1 = new Date("03/01/2022");
     const today = new Date(Date.now());
     let diffdays = Math.round( (today - date1) / (1000 * 3600 * 24));
 
     let workOutArr = {}
+    let dic = {}
+    let cnt = 0;
     for (let i = 1; i < 6; i++) {
-        workOutArr[i] = Math.round(totalWorkoutNum * pseudorandom(diffdays, i))
+        let rdm = Math.round(workoutArray.length * pseudorandom(diffdays, cnt + i));
+        while (!workoutArray[rdm]["Image"] || !workoutArray[rdm]["Instructions"] || dic[rdm]) {
+            cnt ++
+            rdm = Math.round(workoutArray.length * pseudorandom(diffdays, cnt + i))
+        }
+        workOutArr[i] = rdm
+        dic[rdm] = true
     }
 
     update(ref(db, path), workOutArr).catch((error) => {
