@@ -7,6 +7,7 @@ import {useParams} from "react-router-dom";
 
 function Home() {
     const { uid } = useParams()
+    const [workoutNumbers, setWorkoutNumbers] = useState([]);
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
     const [finished, setFinished] = useState(false);
@@ -22,14 +23,20 @@ function Home() {
             let difference = time - date1;
             let diffdays = Math.round(difference / (1000 * 3600 * 24));
             //hardcode in workout for now
+
             let workOutArr = []
             let gifArr = []
+            let workoutNumbers = [];
             for (let i = 1; i < 6; i++)
             {
                 workOutArr.push(value[parseInt(60*pseudorandom(diffdays,i))]["Exercise Name"]);
+                workoutNumbers.push(parseInt(60*pseudorandom(diffdays,i)));
                 gifArr.push(value[parseInt(60*pseudorandom(diffdays,i))]["Image"])
             }
             
+
+            setWorkoutNumbers(workoutNumbers);
+
             setWorkouts(workOutArr);
             setGifs(gifArr)
             
@@ -41,7 +48,7 @@ function Home() {
         <div className="home-wrapper m-3">
             {finished ?
                 <WorkoutFinished />
-                : <WorkoutArea workouts={workouts} gifs={gifs} setFinished={setFinished} uid={uid}/>
+                : <WorkoutArea workouts={workouts} workoutNumbers={workoutNumbers} gifs={gifs} setFinished={setFinished} uid={uid}/>
             }
         </div>
     );

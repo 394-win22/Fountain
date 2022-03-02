@@ -16,6 +16,7 @@ export async function fetch_workouts() {
 }
 
 
+
 export function pseudorandom(seed, iteration) {
 
     seed = Math.abs(seed % 2147483647) + 1;
@@ -28,3 +29,15 @@ export function pseudorandom(seed, iteration) {
 
     return seed;
 }
+
+export async function fetch_instructions(workoutNumber) {
+    const path = '/workouts/'+workoutNumber;
+    return await get(ref(db, path)).then((snapshot) => {
+        return snapshot.val().Instructions;
+    }).catch((error) => {
+        console.error(error);
+    });
+}
+
+
+
