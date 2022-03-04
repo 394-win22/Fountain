@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "@tensorflow-models/posenet": "^2.2.2",
     "@tensorflow/tfjs": "^3.13.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -31,6 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -50,7 +52,6 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^9.5.0",
     "survey-react": "^1.9.13"
   }
 }

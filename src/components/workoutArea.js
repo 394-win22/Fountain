@@ -4,6 +4,7 @@ import {storeWorkoutDate} from "../database/users";
 
 import {UpdateBadges} from "./badegs";
 
+export var allWorkouts = null; 
 
 function displayMessage (remTime, messages){
     let message = null;
@@ -43,7 +44,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
 <CountdownCircleTimer
         isPlaying={playing}
         className="x"
-        duration={120}
+        duration={2}
         key={key}
         colors={['#004777', '#F7B801', '#A30000', '#A30000']}
         colorsTime={[7, 5, 2, 0]}
@@ -74,6 +75,7 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
     const [index, setIndex] = useState(0);
     const [skipKey, setSkipKey] = useState(0)
     const [outRemTime, setOutRemTime] = useState(2);
+    const [finishedWorkouts, setFinishedWorkout] = useState([]);
 
     const Workout = () => {
         return(
@@ -91,7 +93,18 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
             UpdateBadges(uid)
         }
         setIndex(index + 1);
+        setFinishedWorkout(finishedWorkouts => [...finishedWorkouts, index]);
     }
+
+    const allFinishedWorkouts = () => {
+        let allFinishedWorkouts = [];
+        for(let i = 0; i < finishedWorkouts.length; i++){
+            allFinishedWorkouts.push(workouts[i])
+        }
+        return allFinishedWorkouts;
+    }
+    allWorkouts = allFinishedWorkouts()
+    console.log(allWorkouts)
 
     return (
         <div>
