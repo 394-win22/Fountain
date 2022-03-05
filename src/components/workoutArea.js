@@ -50,7 +50,6 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
         colorsTime={[7, 5, 2, 0]}
         onComplete={() => {
             setKey(prevKey => prevKey +1)
-            setPlaying(false);
             updateIndex();
         }}
         >
