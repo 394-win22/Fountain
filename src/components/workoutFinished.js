@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {get_user} from "../database/users";
 
 export function WorkoutFinished() {
+    const today = new Date(Date.now());
     const { uid } = useParams();
     const [photo, setPhoto] = useState("");
   
@@ -20,7 +21,19 @@ export function WorkoutFinished() {
           <img className = "profile-photo" src={photo} alt="UserPhoto"/>
           <div>Well done, youe're on track to improving your lifespan by an extra 5 years!</div>
           <img src="https://firebasestorage.googleapis.com/v0/b/fountain-37243.appspot.com/o/badge1.jpg?alt=media&token=77ce3782-3428-4f95-ba5e-1567661136dc"alt="badge working towards"/>
-          <a className="startbutton" href="https://www.facebook.com/groups/fountainfit/">Share on Fountain Facebook</a>
+          <button type="button" className="btn btn-outline-dark"  onClick={() => {
+                 navigator.clipboard.writeText("I finished the fountain workout on " + today.toDateString() + "! https://fountain-37243.web.app").then(() =>{
+                    alert("copy success!"); 
+                 })
+                 
+             }} >Copy to Clipboard
+             </button>
+          <button type="button" className="btn btn-outline-dark"  onClick={() => {
+                 navigator.clipboard.writeText("I finished the fountain workout on " + today.toDateString() + "! https://fountain-37243.web.app").then(() =>{
+                    window.location="https://www.facebook.com/groups/fountainfit/";
+                 })
+                 
+             }}>Share on Fountain Facebook</button>
           <button type="button" className="btn btn-outline-dark"  onClick={() => {
                 alert("This is a premium feature!")
             }} >
