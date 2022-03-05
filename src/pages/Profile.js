@@ -41,7 +41,6 @@ export function Profile() {
                     <div> Your Number: {phoneNumber? phoneNumber: 
                     <form>
                         <label>
-                            
                             <input type="text" name="number" onChange={number => add_number(uid,number.target.value)}/>
                         </label>
                         <input type="submit" value="Submit" />
@@ -50,8 +49,12 @@ export function Profile() {
                     {badges && badgeImages? <div> {Object.keys(badges).map(key => {
                         return <img src={badgeImages[key].image} width="100" alt={key}/>
                     })} </div> : null}
-                    
-                    
+                    {badges && badgeImages? <div> {Object.keys(badgeImages).map(key => {
+                        if (!badges[key]) {
+                            return <img src={badgeImages[key].image} width="100" alt={key} style={{"filter": "grayscale(100%)"}} />
+                        }
+                        return null
+                    })} </div> : null}
                 </div>
             </div>
         </div>
