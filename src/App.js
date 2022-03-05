@@ -11,7 +11,7 @@ import {Navbar, NavbarBrand, Container} from "react-bootstrap";
 import {Burger} from "./Burger/Burger";
 import {Menu} from "./Menu/Menu";
 import Start from "./pages/Start";
-import PastWorkouts from './pages/PastWorkouts';
+import {PastWorkouts} from './pages/PastWorkouts';
 
 import Countdown from "./pages/Timer";
 import {Preview} from "./pages/Preview";
