@@ -2,21 +2,25 @@ import React from "react";
 import {useEffect, useState} from "react";
 import {get_user} from "../database/users";
 import {NextBadge} from "../components/nextBadge";
-import {getAuth} from "firebase/auth";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {firebase} from "../database/firebase";
 
-function Start({ uid }) {
-    if (uid.length === 0) {
-        uid = getAuth().currentUser.uid;
-    }
-
+function Start({ UID }) {
+    const [uid, setUid] = useState(UID);
     const [name, setName] = useState();
     const [photo, setPhoto] = useState();
 
     useEffect(() => {
-      get_user(uid).then(value => {
+        const auth = getAuth(firebase);
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUid(user.uid);
+            }
+        })
+        get_user(uid).then(value => {
           setName(value.val().userName)
           setPhoto(value.val().userPhoto)
-      });
+        });
     }, [uid]);
 
     return (
