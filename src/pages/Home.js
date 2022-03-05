@@ -39,7 +39,7 @@ function Home({ UID }) {
     return (
         <div className="home-wrapper m-3">
             {finished ?
-                <WorkoutFinished uid={uid}/>
+                <WorkoutFinished uid={uid} />
                 : <WorkoutArea workouts={workouts} instructions={instructions} gifs={gifs} setFinished={setFinished} uid={uid}/>
             }
         </div>

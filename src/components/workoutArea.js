@@ -53,6 +53,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
         onComplete={() => {
             setKey(prevKey => prevKey +1)
             setPlaying(true);
+
             updateIndex();
         }}
         >
@@ -122,13 +123,21 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
                             <button type="button" className="timer-button" onClick={() => setPlaying(false)} ><i className="bi bi-pause"></i></button>:
                             <button type="button" className="timer-button" onClick={() => setPlaying(true)}><i class="bi bi-play"></i></button>}
                     </div>
-                    <button className="skip-button"onClick={()=> {setIndex((index + 1) % 5)
-                        setSkipKey(Math.floor(Math.random()*10000000))
-                    }}>Skip</button>
+                    <button type="button" className="skip-button" onClick={()=> {
+                                 updateIndex()
+                                 setSkipKey(Math.floor(Math.random()*10000000))
+                             }}>Skip</button>
+                    
+
                     </div>
                     : null
                 }
-                <div className="timer"> <UrgeWithPleasureComponent setOutRemTime={setOutRemTime} className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying} skipKey={skipKey}/></div>
+                <div className="timer">
+                    <UrgeWithPleasureComponent
+                        setOutRemTime={setOutRemTime} className="timer-component" playing={playing}
+                        updateIndex={updateIndex} setPlaying={setPlaying} skipKey={skipKey}
+                    />
+                </div>
             </div>
         </div>
 
