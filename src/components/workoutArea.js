@@ -50,7 +50,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
         colorsTime={[7, 5, 2, 0]}
         onComplete={() => {
             setKey(prevKey => prevKey +1)
-            setPlaying(true);
+            setPlaying(false);
             updateIndex();
         }}
         >
@@ -71,7 +71,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
 }
 
 export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
-    const [playing, setPlaying] = useState(false);
+    const [playing, setPlaying] = useState(true);
     const [index, setIndex] = useState(0);
     const [skipKey, setSkipKey] = useState(0)
     const [outRemTime, setOutRemTime] = useState(2);
