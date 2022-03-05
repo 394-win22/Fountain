@@ -7,7 +7,7 @@ export function SignInButton({ setUName }){
     const navigate = useNavigate();
     return (
     <div className="sign-in d-grid gap-3 col-3 p-2">
-    <button type="button" className="btn btn-outline-dark" onClick={ () => {
+    <button data-cy="button" type="button" className="btn btn-outline-dark" onClick={ () => {
         signInWithGoogle().then(([uid, email, name, photoUrl, phoneNumber ]) => {
             setUName(name);
             make_user(uid, name, email, photoUrl);

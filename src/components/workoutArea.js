@@ -1,33 +1,35 @@
 import React, {useEffect, useState} from "react";
 import {CountdownCircleTimer} from "react-countdown-circle-timer";
 import {storeWorkoutDate} from "../database/users";
+
 import {UpdateBadges} from "./badegs";
 
+export var allWorkouts = null; 
 
-function displayMessage (remTime){
+function displayMessage (remTime, messages){
     let message = null;
-    const messages = ["Let's get started on this",
-        "You're almost there",
-        "Finish Strong",
-        "Way to go"]
+    if (messages) {
+        messages = Object.values(messages)
+        if (remTime <= 120 && remTime > 110 ){
+            message = messages[0]
+        }
+        else if (remTime <= 100 && remTime > 50){
+            message = messages[1]
+        }
+        else if (remTime <= 30 && remTime > 20){
+            message = messages[2]
+        }
+        else if (remTime === 0){
+            message = messages[3]
+        }
+        return (
+            <div>
+                {message}
+            </div>
+        )
 
-    if (remTime <= 120 && remTime > 110 ){
-        message = messages[0]
     }
-    else if (remTime <= 100 && remTime > 50){
-        message = messages[1]
-    }
-    else if (remTime <= 30 && remTime > 20){
-        message = messages[2]
-    }
-    else if (remTime === 0){
-        message = messages[3]
-    }
-    return (
-        <div>
-            {message}
-        </div>
-    )
+
 }
 
 
@@ -68,11 +70,13 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
 
 }
 
-export function WorkoutArea({ workouts, setRemTime, gifs, setFinished, uid}) {
+export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
     const [playing, setPlaying] = useState(false);
     const [index, setIndex] = useState(0);
     const [skipKey, setSkipKey] = useState(0)
     const [outRemTime, setOutRemTime] = useState(2);
+    const [finishedWorkouts, setFinishedWorkout] = useState([]);
+
     const Workout = () => {
         return(
             <div>
@@ -89,13 +93,24 @@ export function WorkoutArea({ workouts, setRemTime, gifs, setFinished, uid}) {
             UpdateBadges(uid)
         }
         setIndex(index + 1);
+        setFinishedWorkout(finishedWorkouts => [...finishedWorkouts, index]);
     }
+
+    const allFinishedWorkouts = () => {
+        let allFinishedWorkouts = [];
+        for(let i = 0; i < finishedWorkouts.length; i++){
+            allFinishedWorkouts.push(workouts[i])
+        }
+        return allFinishedWorkouts;
+    }
+    allWorkouts = allFinishedWorkouts()
+    console.log(allWorkouts)
 
     return (
         <div>
             <Workout />
             <div className="gif-wrapper"> <img className="gif" src= {gifs[index]} alt={"gif"}/></div>
-            <div className = "displayMessage">{displayMessage(outRemTime)}</div>
+            <div className = "displayMessage">{displayMessage(outRemTime, instructions[index])}</div>
             <div className="timewrapper"> 
             
                 <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>

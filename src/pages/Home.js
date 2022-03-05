@@ -7,22 +7,25 @@ import {useParams} from "react-router-dom";
 
 function Home() {
     const { uid } = useParams()
+    const [instructions, setInstructions] = useState([]);
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
     const [finished, setFinished] = useState(false);
 
     useEffect(() => {
         fetch_workouts().then(value => {
-            // let random = value.sort(() => .5 - Math.random()).slice(0,5);
-            // const workOutArr = random.map(x => x["Exercise Name"]);
-            // setWorkouts(workOutArr);
-
-            //hardcode in workout for now
-            const workOutArr = [value[26]["Exercise Name"], value[3]["Exercise Name"], value[0]["Exercise Name"], value[10]["Exercise Name"], value[32]["Exercise Name"]];
+            let workOutArr = [];
+            let gifArr = [];
+            let instructionsArr = [];
+            Object.values(value).forEach((val) => {
+                workOutArr.push(val["Exercise Name"])
+                gifArr.push(val["Image"])
+                instructionsArr.push(val["Instructions"])
+            })
+            setInstructions(instructionsArr);
             setWorkouts(workOutArr);
-            const gifArr = [value[26]["Image"], value[3]["Image"], value[0]["Image"], value[10]["Image"], value[32]["Image"]];
             setGifs(gifArr)
-    })
+        })
     }, []);
     
 
@@ -30,7 +33,7 @@ function Home() {
         <div className="home-wrapper m-3">
             {finished ?
                 <WorkoutFinished />
-                : <WorkoutArea workouts={workouts} gifs={gifs} setFinished={setFinished} uid={uid}/>
+                : <WorkoutArea workouts={workouts} instructions={instructions} gifs={gifs} setFinished={setFinished} uid={uid}/>
             }
         </div>
     );

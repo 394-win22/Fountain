@@ -31,8 +31,8 @@ function App() {
                         <img className="d-inline-block align-top" src={logo} alt="logo" height="60"/>
                     </NavbarBrand>
                 </Container>
-                <div>
-                    <Burger open={open} setOpen={setOpen} />
+                <div >
+                    <Burger  open={open} setOpen={setOpen} />
                     <Menu open={open} setOpen={setOpen} uid={uid} setUid={setUid}/>
                 </div>
             </Navbar> : null}
@@ -44,6 +44,7 @@ function App() {
 
                     <Route path="/home/:uid" element={<Home />} />
                     <Route path="/start/:uid" element={<Start />} />
+                   
                     <Route path="/profile/:uid" element={<Profile />} />
                     <Route path="/preview/:uid" element={<Preview />} />
                     <Route path="/countdown/:uid" element={<Countdown />} />

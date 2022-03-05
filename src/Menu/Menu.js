@@ -14,6 +14,7 @@ export const Menu = ({ open, uid, setUid }) => {
 
                 Profile
             </a>
+            
             {uid ?
                 <a href="/" onClick={ () => {
                     signOut().then(() => {
