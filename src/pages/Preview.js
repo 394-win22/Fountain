@@ -3,7 +3,7 @@ import {Container, Row, Col, Card} from "react-bootstrap";
 import {fetch_workouts} from "../database/workout";
 import {useNavigate} from "react-router-dom";
 
-export function Preview({ uid }) {
+export function Preview() {
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
     const navigate = useNavigate();
@@ -12,11 +12,9 @@ export function Preview({ uid }) {
         fetch_workouts().then(value => {
             let workOutArr = [];
             let gifArr = [];
-            let instructionsArr = [];
             Object.values(value).forEach((val) => {
                 workOutArr.push(val["Exercise Name"])
                 gifArr.push(val["Image"])
-                instructionsArr.push(val["Instructions"])
             })
             setWorkouts(workOutArr);
             setGifs(gifArr)
@@ -27,7 +25,7 @@ export function Preview({ uid }) {
         <div>
             <div id="preview-back-start">
                 <button className="previewBack">Back</button>
-                <span></span>
+                <span/>
                 <button className="previewStart" onClick={() => {
                     navigate('/home/');
                 }}>Start</button>

@@ -43,11 +43,11 @@ function App() {
                     <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
                                                                 setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
 
-                    <Route path="/home/" element={<Home uid={uid} />} />
-                    <Route path="/start/" element={<Start uid={uid} />} />
-                    <Route path='/pastWorkouts/' element={<PastWorkouts />} />
+                    <Route path="/home/" element={<Home UID={uid} />} />
+                    <Route path="/start/" element={<Start UID={uid} />} />
+                    <Route path='/pastWorkouts/' element={<PastWorkouts />}/>
                     <Route path="/profile/:uid" element={<Profile />} />
-                    <Route path="/preview/" element={<Preview uid={uid}/>} />
+                    <Route path="/preview/" element={<Preview UID={uid}/>} />
                     <Route path="/countdown/" element={<Countdown />} />
 
                 </Routes>

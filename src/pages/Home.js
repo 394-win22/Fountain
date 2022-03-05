@@ -3,19 +3,23 @@ import {fetch_workouts} from "../database/workout";
 import {useEffect, useState} from 'react';
 import {WorkoutArea} from "../components/workoutArea";
 import {WorkoutFinished} from "../components/workoutFinished";
-import { getAuth } from "firebase/auth";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {firebase} from "../database/firebase";
 
-function Home({ uid }) {
-    if (uid.length === 0) {
-        uid = getAuth().currentUser.uid;
-    }
-
+function Home({ UID }) {
+    const [uid, setUID] = useState(UID);
     const [instructions, setInstructions] = useState([]);
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
     const [finished, setFinished] = useState(false);
 
     useEffect(() => {
+        const auth = getAuth(firebase);
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUID(user.uid);
+            }
+        })
         fetch_workouts().then(value => {
             let workOutArr = [];
             let gifArr = [];
