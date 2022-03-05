@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {CountdownCircleTimer} from "react-countdown-circle-timer";
 import {storeWorkoutDate} from "../database/users";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import {UpdateBadges} from "./badegs";
 
@@ -35,7 +37,7 @@ function displayMessage (remTime, messages){
 
 function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemTime, skipKey}){
     const [remTime, setRemTime] = useState(2);
-    const [key, setKey] = useState(0)
+    const [key, setKey] = useState(0);
     useEffect(()=>{
         setKey(skipKey)
     }, [skipKey])
@@ -44,13 +46,13 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
 <CountdownCircleTimer
         isPlaying={playing}
         className="x"
-        duration={2}
+        duration={120}
         key={key}
         colors={['#004777', '#F7B801', '#A30000', '#A30000']}
         colorsTime={[7, 5, 2, 0]}
         onComplete={() => {
             setKey(prevKey => prevKey +1)
-            setPlaying(false);
+            setPlaying(true);
             updateIndex();
         }}
         >
@@ -71,7 +73,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
 }
 
 export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
-    const [playing, setPlaying] = useState(false);
+    const [playing, setPlaying] = useState(true);
     const [index, setIndex] = useState(0);
     const [skipKey, setSkipKey] = useState(0)
     const [outRemTime, setOutRemTime] = useState(2);
@@ -114,13 +116,15 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
             
                 <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>
                 { index < 5 ?
-                    <div className = "timer-button">
+                    <div>
+                    <div>
                         { playing ?
-                            <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(false)}>Pause</button>:
-                            <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(true)}>Start</button>}
-                            <button type="button" className="btn btn-outline-dark" onClick={()=> {setIndex((index + 1) % 5)
-                                setSkipKey(Math.floor(Math.random()*10000000))
-                            }}>Next One</button>
+                            <button type="button" className="timer-button" onClick={() => setPlaying(false)} ><i className="bi bi-pause"></i></button>:
+                            <button type="button" className="timer-button" onClick={() => setPlaying(true)}><i class="bi bi-play"></i></button>}
+                    </div>
+                    <button className="skip-button"onClick={()=> {setIndex((index + 1) % 5)
+                        setSkipKey(Math.floor(Math.random()*10000000))
+                    }}>Skip</button>
                     </div>
                     : null
                 }
