@@ -25,12 +25,19 @@ export function Preview() {
 
     return (
         <div>
-            <h2>Preview Workout</h2>
-            <h6>Total Time: 10 min</h6>
-            <h6>Total Workouts: {workouts.length}</h6>
-            <button onClick={() => {
-                navigate('/home/'+uid);
-            }}>Start</button>
+            <div id="preview-back-start">
+                <button className="previewBack">Back</button>
+                <span></span>
+                <button className="previewStart" onClick={() => {
+                    navigate('/home/'+uid);
+                }}>Start</button>
+            </div>
+            <div style={{marginLeft: 10+"%"}}>
+                <h2>Preview Workout</h2>
+                <h6>Total Time: 10 min</h6>
+                <h6>Total Workouts: {workouts.length}</h6>
+            </div>
+
             <Container>
                 <Row xs={1} md={2}>
                     {Object.keys(workouts).map((value) => {

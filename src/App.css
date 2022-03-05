@@ -287,4 +287,27 @@
 
 }
 
+#preview-back-start{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
 
+.previewBack, .previewStart{
+  border-color: cornflowerblue;
+  border-radius: 50%;
+  width: 100px;
+  height: 50px;
+}
+
+.previewBack{
+  margin-left: 2%;
+  background-color: white;
+  color: blue;
+}
+.previewStart{
+  margin-left: auto;
+  margin-right: 4%;
+  background-color: #E6247B;
+  color: white;
+}
