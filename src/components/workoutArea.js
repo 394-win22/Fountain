@@ -118,13 +118,19 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
                         { playing ?
                             <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(false)}>Pause</button>:
                             <button type="button" className="btn btn-outline-dark" onClick={() => setPlaying(true)}>Start</button>}
-                            <button type="button" className="btn btn-outline-dark" onClick={()=> {setIndex((index + 1) % 5)
+                            <button type="button" className="btn btn-outline-dark" onClick={()=> {
+                                updateIndex()
                                 setSkipKey(Math.floor(Math.random()*10000000))
                             }}>Next One</button>
                     </div>
                     : null
                 }
-                <div className="timer"> <UrgeWithPleasureComponent setOutRemTime={setOutRemTime} className="timer-component" playing={playing} updateIndex={updateIndex} setPlaying={setPlaying} skipKey={skipKey}/></div>
+                <div className="timer">
+                    <UrgeWithPleasureComponent
+                        setOutRemTime={setOutRemTime} className="timer-component" playing={playing}
+                        updateIndex={updateIndex} setPlaying={setPlaying} skipKey={skipKey}
+                    />
+                </div>
             </div>
         </div>
 
