@@ -120,15 +120,13 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
                     <div>
                     <div>
                         { playing ?
-                            <button type="button" className="timer-button" onClick={() => setPlaying(false)} ><i className="bi bi-pause"></i></button>:
-                            <button type="button" className="timer-button" onClick={() => setPlaying(true)}><i class="bi bi-play"></i></button>}
-                    </div>
-                    <button type="button" className="skip-button" onClick={()=> {
+                            <div><button type="button" className="timer-button" onClick={() => setPlaying(false)} ><i className="bi bi-pause"></i></button></div>:
+                            <div><button type="button" className="timer-button" onClick={() => setPlaying(true)}><i class="bi bi-play"></i></button>
+                            <button type="button" className="skip-button" onClick={()=> {
                                  updateIndex()
                                  setSkipKey(Math.floor(Math.random()*10000000))
-                             }}>Skip</button>
-                    
-
+                             }}>Skip</button></div>}
+                    </div>
                     </div>
                     : null
                 }
