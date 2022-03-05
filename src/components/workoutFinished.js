@@ -4,8 +4,7 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {get_user} from "../database/users";
 
-export function WorkoutFinished() {
-    const { uid } = useParams();
+export function WorkoutFinished({ uid }) {
     const [photo, setPhoto] = useState("");
   
     useEffect(() => {

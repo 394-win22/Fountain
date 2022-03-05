@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {Container, Row, Col, Card} from "react-bootstrap";
 import {fetch_workouts} from "../database/workout";
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-export function Preview() {
-    const { uid } = useParams()
+export function Preview({ uid }) {
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
     const navigate = useNavigate();
@@ -30,7 +29,7 @@ export function Preview() {
                 <button className="previewBack">Back</button>
                 <span></span>
                 <button className="previewStart" onClick={() => {
-                    navigate('/home/'+uid);
+                    navigate('/home/');
                 }}>Start</button>
             </div>
             <div style={{marginLeft: 10+"%"}}>

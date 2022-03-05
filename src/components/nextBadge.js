@@ -48,7 +48,7 @@ export function NextBadge({uid}) {
                     <div>
                         <img src={badgeImages[badgeList[nxt][0]].image} alt="badge working towards"/>
                     </div>
-                    <a className="reviewbutton" href={"/preview/"+uid}>Review Workout</a>
+                    <a className="reviewbutton" href={"/preview/"}>Review Workout</a>
                 </div>
                 : null
             }
