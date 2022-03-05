@@ -14,9 +14,7 @@ export const Menu = ({ open, uid, setUid }) => {
 
                 Profile
             </a>
-            <a href={uid ? "/pastWorkouts/"+uid : "/"}>
-                Past Workouts
-            </a>
+            
             {uid ?
                 <a href="/" onClick={ () => {
                     signOut().then(() => {
