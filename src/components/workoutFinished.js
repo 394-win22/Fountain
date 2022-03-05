@@ -4,9 +4,13 @@ import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {get_user} from "../database/users";
 
+<<<<<<< HEAD
 export function WorkoutFinished() {
     const today = new Date(Date.now());
     const { uid } = useParams();
+=======
+export function WorkoutFinished({ uid }) {
+>>>>>>> 99c9ae01b01e12cf0a953f7e5cd3c608dac691c5
     const [photo, setPhoto] = useState("");
   
     useEffect(() => {

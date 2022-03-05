@@ -6,7 +6,7 @@ import {make_user, signInWithGoogle, signOut} from "../database/users";
 export const Menu = ({ open, uid, setUid }) => {
     return (
         <StyledMenu open={open}>
-            <a href={uid ? "/start/"+uid : "/"}>
+            <a href={uid ? "/start/" : "/"}>
 
                 Home
             </a>

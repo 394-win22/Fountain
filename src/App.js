@@ -11,6 +11,7 @@ import {Navbar, NavbarBrand, Container} from "react-bootstrap";
 import {Burger} from "./Burger/Burger";
 import {Menu} from "./Menu/Menu";
 import Start from "./pages/Start";
+import {PastWorkouts} from './pages/PastWorkouts';
 
 import Countdown from "./pages/Timer";
 import {Preview} from "./pages/Preview";
@@ -42,12 +43,12 @@ function App() {
                     <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
                                                                 setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
 
-                    <Route path="/home/:uid" element={<Home />} />
-                    <Route path="/start/:uid" element={<Start />} />
-                   
+                    <Route path="/home/" element={<Home uid={uid} />} />
+                    <Route path="/start/" element={<Start uid={uid} />} />
+                    <Route path='/pastWorkouts/' element={<PastWorkouts />} />
                     <Route path="/profile/:uid" element={<Profile />} />
-                    <Route path="/preview/:uid" element={<Preview />} />
-                    <Route path="/countdown/:uid" element={<Countdown />} />
+                    <Route path="/preview/" element={<Preview uid={uid}/>} />
+                    <Route path="/countdown/" element={<Countdown />} />
 
                 </Routes>
             </BrowserRouter>

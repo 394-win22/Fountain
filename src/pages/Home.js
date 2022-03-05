@@ -3,10 +3,13 @@ import {fetch_workouts} from "../database/workout";
 import {useEffect, useState} from 'react';
 import {WorkoutArea} from "../components/workoutArea";
 import {WorkoutFinished} from "../components/workoutFinished";
-import {useParams} from "react-router-dom";
+import { getAuth } from "firebase/auth";
 
-function Home() {
-    const { uid } = useParams()
+function Home({ uid }) {
+    if (uid.length === 0) {
+        uid = getAuth().currentUser.uid;
+    }
+
     const [instructions, setInstructions] = useState([]);
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
@@ -32,7 +35,7 @@ function Home() {
     return (
         <div className="home-wrapper m-3">
             {finished ?
-                <WorkoutFinished />
+                <WorkoutFinished uid={uid}/>
                 : <WorkoutArea workouts={workouts} instructions={instructions} gifs={gifs} setFinished={setFinished} uid={uid}/>
             }
         </div>

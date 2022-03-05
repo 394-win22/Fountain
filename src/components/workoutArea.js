@@ -104,7 +104,6 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
         return allFinishedWorkouts;
     }
     allWorkouts = allFinishedWorkouts()
-    console.log(allWorkouts)
 
     return (
         <div>
