@@ -129,3 +129,20 @@ export async function fetchWorkoutDate(uid) {
     });
 }
 
+export async function get_phone_numbers() {
+    let phoneNumbers=[];
+    return await get(ref(db, 'users/')).then(snapshot => {
+        snapshot.forEach((child) => {
+            if (child.val().userPhoneNumber){
+                phoneNumbers.push(child.val().userPhoneNumber)
+            }
+          });
+        return phoneNumbers;
+    }).catch((error) => {
+        console.log(error);
+    });
+}
+
+
+
+
