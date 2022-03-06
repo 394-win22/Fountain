@@ -19,13 +19,14 @@ async function get_phone_numbers() {
 }
 
 exports.scheduledFunctionCrontab = functions.runWith({ memory: '2GB' })
-    .pubsub.schedule("12 18 * * *")
+    .pubsub.schedule("24 18 * * *")
     .timeZone("America/Chicago")
     .onRun(async (context) => {
       const promises = [];
       get_phone_numbers().then(phoneNumbers =>{
         console.log(phoneNumbers);
-        for (let number in phoneNumbers){
+        for (const number of phoneNumbers){
+          console.log(number);
           promises.push(db.collection('messages').add({to: "+1"+number, from: "+18623622582", body: "Today’s daily workout of the day has just been posted. Click here to start! https://fountain-37243.web.app" })); 
         }
       });
