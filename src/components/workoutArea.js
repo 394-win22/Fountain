@@ -48,8 +48,10 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
         className="x"
         duration={120}
         key={key}
+        isSmoothColorTransition={true}
+        size={120}
         colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-        colorsTime={[7, 5, 2, 0]}
+        colorsTime={[120, 100, 50, 0]}
         onComplete={() => {
             setKey(prevKey => prevKey +1)
             setPlaying(true);
@@ -131,7 +133,8 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
                     : null
                 }
                 <div className="timer">
-                    <UrgeWithPleasureComponent
+                    <p>Time Left</p>
+                    <UrgeWithPleasureComponent 
                         setOutRemTime={setOutRemTime} className="timer-component" playing={playing}
                         updateIndex={updateIndex} setPlaying={setPlaying} skipKey={skipKey}
                     />
