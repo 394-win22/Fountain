@@ -1,16 +1,16 @@
 This is the Google Pub/Sub fake.
 Implementation may be incomplete or differ from the real system.
-Mar 07, 2022 3:48:36 PM com.google.cloud.pubsub.testing.v1.Main main
+Mar 07, 2022 4:02:25 PM com.google.cloud.pubsub.testing.v1.Main main
 INFO: IAM integration is disabled. IAM policy methods and ACL checks are not supported
-Mar 07, 2022 3:48:36 PM io.gapi.emulators.netty.NettyUtil applyJava7LongHostnameWorkaround
+Mar 07, 2022 4:02:26 PM io.gapi.emulators.netty.NettyUtil applyJava7LongHostnameWorkaround
 INFO: Unable to apply Java 7 long hostname workaround.
-Mar 07, 2022 3:48:37 PM com.google.cloud.pubsub.testing.v1.Main main
+Mar 07, 2022 4:02:26 PM com.google.cloud.pubsub.testing.v1.Main main
 INFO: Server started, listening on 8086
-Mar 07, 2022 3:48:37 PM io.gapi.emulators.grpc.GrpcServer$3 operationComplete
+Mar 07, 2022 4:02:26 PM io.gapi.emulators.grpc.GrpcServer$3 operationComplete
 INFO: Adding handler(s) to newly registered Channel.
-Mar 07, 2022 3:48:42 PM io.gapi.emulators.grpc.GrpcServer$3 operationComplete
+Mar 07, 2022 4:02:28 PM io.gapi.emulators.grpc.GrpcServer$3 operationComplete
 INFO: Adding handler(s) to newly registered Channel.
-Mar 07, 2022 3:48:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+Mar 07, 2022 4:02:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
 INFO: Detected HTTP/2 connection.
 *** shutting down gRPC server since JVM is shutting down
 *** server shut down
