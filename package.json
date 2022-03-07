@@ -35,6 +35,7 @@
     "em:start": "firebase emulators:start --import=./saved-data --export-on-exit",
     "em:run": "firebase emulators:exec --import=./saved-data 'npm start'"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",

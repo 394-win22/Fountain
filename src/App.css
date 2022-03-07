@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+body{
+  font-family: 'proxima-nova', sans-serif;
+}
 
 .App-logo {
   height: 40vmin;
@@ -194,6 +197,7 @@
   width: 100%;
   height: auto;
   text-align: center;
+  display: flex;
 
 }
 
@@ -212,7 +216,6 @@
 .timewrapper{
   background-color: #696969;
   color: white;
-  border-radius: 30px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-evenly;
@@ -278,7 +281,7 @@
   align-content: space-evenly;
   align-items: center;
   font-size: 48px;
-  font-family: "Montserrat";
+  font-family: "proxima-nova";
   height: 88vh;
   color: #FFFFFF;
   background-color: #e73323;
@@ -295,11 +298,19 @@
 .welcome-back{
   font-size:30px;
   text-align: center;
+  border-radius: 20px;
+  width: auto;
+  border-style: solid;
+  padding: 10px;
+  margin: 20px;
+  border-color: #dee2e6;
+  border-width: 0 5px 5px 5px
 }
 
 .wodc-start{
   font-size:20px;
   padding-top:10px;
+  font-weight: bold;
 
 }
 
