@@ -207,6 +207,14 @@ body{
 
 .gif{
   height:400px
+
+  
+}
+
+@media (max-width: 576px) {
+  .gif{width: 100%;
+    height: auto;}
+
 }
 
 .gif-wrapper{
