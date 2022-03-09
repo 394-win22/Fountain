@@ -25,7 +25,7 @@ jobs:
         with:
           build: npm run build
           start: npm run em:run
-          wait-on: http://localhost:3000
+          wait-on: http://127.0.0.1:3000
   
 
   deploy:
