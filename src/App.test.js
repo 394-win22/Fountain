@@ -25,6 +25,13 @@ test('renders the welcome page', () => {
     expect(linkElement).toBeInTheDocument();
 });
 
+test('show log out button if log in', () => {
+    useUserState.mockReturnValue([userData]);
+    render(<App />);
+    const logout = screen.getByText(/Logout/i);
+    expect(logout).toBeInTheDocument();
+});
+
 test('renders the profile page',  () => {
     get_user.mockReturnValue(Promise.resolve(userData));
     fetch_badges.mockReturnValue(Promise.resolve({}));
@@ -33,3 +40,5 @@ test('renders the profile page',  () => {
     const linkElement = screen.getByText(/Your Name/i);
     expect(linkElement).toBeInTheDocument();
 });
+
+
