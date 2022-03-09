@@ -24,10 +24,12 @@ export function Preview() {
     return (
         <div>
             <div id="preview-back-start">
-                <button className="previewBack">Back</button>
+                <button className="previewBack" onClick={() => {
+                    navigate('/start/');
+                }}>Back</button>
                 <span/>
                 <button className="previewStart" onClick={() => {
-                    navigate('/home/');
+                    navigate('/countdown/');
                 }}>Start</button>
             </div>
             <div style={{marginLeft: 10+"%"}}>

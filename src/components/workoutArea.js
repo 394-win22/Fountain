@@ -107,7 +107,7 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
 <CountdownCircleTimer
         isPlaying={playing}
         className="x"
-        duration={120}
+        duration={2}
         key={key}
         isSmoothColorTransition={true}
         size={120}

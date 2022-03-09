@@ -28,7 +28,7 @@ function App() {
         <div>
             {user? <Navbar bg="light">
                 <Container>
-                    <NavbarBrand className="me-2" href="/">
+                    <NavbarBrand className="me-2" href="/start">
                         <img className="d-inline-block align-top" src={logo} alt="logo" height="60"/>
                     </NavbarBrand>
                 </Container>
