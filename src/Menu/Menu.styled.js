@@ -21,7 +21,7 @@ export const StyledMenu = styled.nav`
 
   a {
     font-size: 2rem;
-    font-family: 'proxima-nova';
+    font-family:"Fredoka";
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;

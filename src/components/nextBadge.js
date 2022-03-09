@@ -17,7 +17,7 @@ const badgeList = [
     ["100_workouts","100 Total Workouts"],
 ]
 
-export function NextBadge({uid}) {
+export function NextBadge({ uid, containReview}) {
     const [badges, setBadges] = useState()
     const [badgeImages, setBadgeImages] = useState()
     const [nxt, setNxt] = useState(0)
@@ -41,14 +41,12 @@ export function NextBadge({uid}) {
         <div >
             {badges&&badgeImages?
                 <div className="card m-1 p-2 startwrapper">
-                    <div>
-                        Complete this class and earn your "{badgeList[nxt][1]}" badge!
-
-                    </div>
-                    <div>
-                        <img src={badgeImages[badgeList[nxt][0]].image} alt="badge working towards"/>
-                    </div>
-                    <a className="reviewbutton" href={"/preview/"}>Review Workout</a>
+                    {containReview ?
+                        <div style={{fontFamily:"Fredoka"}}>Complete this class and earn your "{badgeList[nxt][1]}" badge!</div> :
+                        <div style={{fontFamily:"Fredoka"}}>Your next Badge</div>
+                    }
+                    <img src={badgeImages[badgeList[nxt][0]].image} alt="badge working towards" height="200px" />
+                    {containReview ? <a className="reviewbutton" href={"/preview/"}>Review Workout</a>:null}
                 </div>
                 : null
             }

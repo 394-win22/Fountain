@@ -26,11 +26,11 @@ function Start({ UID }) {
     return (
         <div className="startwrapper">
             <div className="welcome-back">Welcome back {name ? name : "NULL"}!</div>
-            <img className = "profile-photo" src={photo} alt="UserPhoto"/>
+            <img className="profile-photo" src={photo} alt="UserPhoto"/>
             <div className="wodc-start">Workout Of The Day Challenge (WODC)</div>
 
             <a className="startbutton" href={"/countdown/"}>Begin Workout of the Day</a>
-            <NextBadge uid={uid}/>
+            <NextBadge uid={uid} containReview={true}/>
         </div>
     );
 }
