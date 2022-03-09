@@ -104,38 +104,6 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
     }, [skipKey])
     return (
         <div id="l">
-<<<<<<< HEAD
-<CountdownCircleTimer
-        isPlaying={playing}
-        className="x"
-        duration={2}
-        key={key}
-        isSmoothColorTransition={true}
-        size={120}
-        colors={['#004777', '#F7B801', '#A30000', '#A30000']}
-        colorsTime={[120, 100, 50, 0]}
-        onComplete={() => {
-            setKey(prevKey => prevKey +1)
-            setPlaying(true);
-
-            updateIndex();
-        }}
-        >
-        {({ remainingTime }) =>  {
-            const minutes = Math.floor(remainingTime / 60);
-            let seconds = remainingTime % 60;
-            setRemTime((minutes*60) + seconds)
-            setOutRemTime(remTime);
-            if (seconds <10){
-                seconds = "0"+seconds;
-            }
-            return `${minutes}:${seconds}`}
-        }
-    </CountdownCircleTimer>
-    </div>
-    </>)
-
-=======
             <CountdownCircleTimer
                 isPlaying={playing}
                 className="x"
@@ -164,7 +132,6 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
             </CountdownCircleTimer>
         </div>
     )
->>>>>>> d822cb7fd6fa734c2f1fd2ecad6f465e52593664
 }
 
 export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
