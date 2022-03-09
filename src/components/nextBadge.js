@@ -46,7 +46,7 @@ export function NextBadge({ uid, containReview}) {
                         <div style={{fontFamily:"Fredoka"}}>Your next Badge</div>
                     }
                     <img src={badgeImages[badgeList[nxt][0]].image} alt="badge working towards" height="200px" />
-                    {containReview ? <a className="reviewbutton" href={"/preview/"}>Review Workout</a>:null}
+                    {containReview ? <a className="reviewbutton" href={"/review/"}>Review Workout</a>:null}
                 </div>
                 : null
             }
