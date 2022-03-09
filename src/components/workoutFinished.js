@@ -11,7 +11,7 @@ export function WorkoutFinished({ uid }) {
   
     useEffect(() => {
         get_user(uid).then(value => {
-            setPhoto(value.val().userPhoto)
+            setPhoto(value.userPhoto)
         });
     }, [uid]);
     return (
@@ -20,7 +20,7 @@ export function WorkoutFinished({ uid }) {
           <div>You did it!</div>
           <img className = "profile-photo" src={photo} alt="UserPhoto"/>
           <div>Well done, youe're on track to improving your lifespan by an extra 5 years!</div>
-          <img src="https://firebasestorage.googleapis.com/v0/b/fountain-37243.appspot.com/o/badge1.jpg?alt=media&token=77ce3782-3428-4f95-ba5e-1567661136dc"alt="badge working towards"/>
+          <img src="https://firebasestorage.googleapis.com/v0/b/fountain-37243.appspot.com/o/badge1.jpg?alt=media&token=77ce3782-3428-4f95-ba5e-1567661136dc" alt="badge working towards"/>
           <button type="button" className="btn btn-outline-dark"  onClick={() => {
                  navigator.clipboard.writeText("I finished the fountain workout on " + today.toDateString() + "! https://fountain-37243.web.app").then(() =>{
                     alert("copy success!"); 
@@ -51,8 +51,8 @@ function Start() {
   
     useEffect(() => {
         get_user(uid).then(value => {
-            setName(value.val().userName)
-            setPhoto(value.val().userPhoto)
+            setName(value.userName)
+            setPhoto(value.userPhoto)
         });
     }, [uid]);
     return (
@@ -69,7 +69,7 @@ function Start() {
               Complete this class and earn your two week acheivement badge!
             </div>
             <div>
-              <img src="https://firebasestorage.googleapis.com/v0/b/fountain-37243.appspot.com/o/badge1.jpg?alt=media&token=77ce3782-3428-4f95-ba5e-1567661136dc"alt="badge working towards"/>
+              <img src="https://firebasestorage.googleapis.com/v0/b/fountain-37243.appspot.com/o/badge1.jpg?alt=media&token=77ce3782-3428-4f95-ba5e-1567661136dc" alt="badge working towards"/>
             </div>
             <a href={"/preview/"+uid}>Review Workout</a>
           </div>

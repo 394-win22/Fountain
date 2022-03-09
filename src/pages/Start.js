@@ -18,8 +18,8 @@ function Start({ UID }) {
             }
         })
         get_user(uid).then(value => {
-          setName(value.val().userName)
-          setPhoto(value.val().userPhoto)
+          setName(value.userName)
+          setPhoto(value.userPhoto)
         });
     }, [uid]);
 
