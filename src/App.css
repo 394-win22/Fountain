@@ -107,6 +107,8 @@ body{
   background-size:auto 100%;
 }
 
+
+
 .intro{
   font-size:4vw;
 }
@@ -126,6 +128,26 @@ body{
   position: relative;
   top:30%;
   left:4%
+}
+
+@media (max-width: 576px) {
+  .intro-and-button{
+    position: relative;
+    top:35%;
+    left:0%
+  }
+  .sign-in{
+    position: relative;
+    left:40%;
+    width: 40%;
+  }
+  .intro{
+    font-size:11vw;
+  }
+  .login-wrapper{
+    background: url(images/Fountain-logo.png) no-repeat;
+    background-size:100% 20%;
+  }
 }
 
 .skip-container{
@@ -208,6 +230,14 @@ body{
 
 .gif{
   height:400px
+
+  
+}
+
+@media (max-width: 576px) {
+  .gif{width: 100%;
+    height: auto;}
+
 }
 
 .gif-wrapper{
@@ -235,6 +265,20 @@ body{
   display: inline-block;
   border-radius: 80px;
   width: 350px;
+  margin: 5% 0;
+  font-size: 20px;
+  padding:5px;
+}
+
+.startbutton {
+  background-color: #e73323;
+  box-shadow: 0px 8px 15px rgba(231, 71, 88, 0.5);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 80px;
+  width: 80%;
   margin: 5% 0;
   font-size: 20px;
   padding:5px;

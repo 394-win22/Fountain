@@ -58,7 +58,7 @@ export function add_number(uid, phoneNumber){
 
 export async function get_user(uid) {
     return await get(ref(db, `users/` + uid)).then((snapshot) => {
-        return snapshot;
+        return snapshot.val();
     }).catch((error) => {
         console.error(error);
     })
