@@ -102,8 +102,9 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
     useEffect(()=>{
         setKey(skipKey)
     }, [skipKey])
-    return (<>
+    return (
         <div id="l">
+<<<<<<< HEAD
 <CountdownCircleTimer
         isPlaying={playing}
         className="x"
@@ -134,6 +135,36 @@ function UrgeWithPleasureComponent({playing, updateIndex, setPlaying, setOutRemT
     </div>
     </>)
 
+=======
+            <CountdownCircleTimer
+                isPlaying={playing}
+                className="x"
+                duration={120}
+                key={key}
+                isSmoothColorTransition={true}
+                size={120}
+                colors={['#004777', '#F7B801', '#A30000', '#A30000']}
+                colorsTime={[120, 100, 50, 0]}
+                onComplete={() => {
+                    setKey(prevKey => prevKey +1)
+                    setPlaying(true);
+
+                    updateIndex();
+                }}>
+                {({ remainingTime }) =>  {
+                    const minutes = Math.floor(remainingTime / 60);
+                    let seconds = remainingTime % 60;
+                    setRemTime((minutes*60) + seconds)
+                    setOutRemTime(remTime);
+                    if (seconds <10){
+                        seconds = "0"+seconds;
+                    }
+                    return `${minutes}:${seconds}`}
+                }
+            </CountdownCircleTimer>
+        </div>
+    )
+>>>>>>> d822cb7fd6fa734c2f1fd2ecad6f465e52593664
 }
 
 export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
@@ -146,10 +177,9 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
     const Workout = () => {
         return(
             <div>
-                <h1 className = "wodc"> WODC </h1>
+                <h1 className="wodc"> WODC </h1>
                 <div className="workout">{workouts[index]}</div>
             </div>
-
         )
     }
 
@@ -175,26 +205,32 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
         <div>
             <Workout />
             <div className="gif-wrapper"> <img className="gif" src= {gifs[index]} alt={"gif"}/></div>
-            <div className = "displayMessage">{displayMessage(outRemTime, instructions[index])}</div>
-            <div className="timewrapper"> 
-            
+            <div className="displayMessage">{displayMessage(outRemTime, instructions[index])}</div>
+            <div className="timewrapper">
                 <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>
                 { index < 5 ?
                     <div>
-                    <div>
                         { playing ?
-                            <div><button type="button" className="timer-button" onClick={() => setPlaying(false)} ><i className="bi bi-pause"></i></button></div>:
-                            <div><button type="button" className="timer-button" onClick={() => setPlaying(true)}><i class="bi bi-play"></i></button>
-                            <button type="button" className="skip-button" onClick={()=> {
-                                 updateIndex()
-                                 setSkipKey(Math.floor(Math.random()*10000000))
-                             }}>Skip</button></div>}
-                    </div>
+                            <div>
+                                <button type="button" className="timer-button" onClick={() => setPlaying(false)} >
+                                    <i className="bi bi-pause"/>
+                                </button>
+                            </div>:
+                            <div>
+                                <button type="button" className="timer-button" onClick={() => setPlaying(true)}>
+                                    <i className="bi bi-play"/>
+                                </button>
+                                <button type="button" className="timer-button" onClick={()=> {
+                                     updateIndex()
+                                     setSkipKey(Math.floor(Math.random()*10000000))
+                                    }}><i className="bi bi-skip-forward"/>
+                                </button>
+                            </div>
+                        }
                     </div>
                     : null
                 }
                 <div className="timer">
-                    <p>Time Left</p>
                     <UrgeWithPleasureComponent 
                         setOutRemTime={setOutRemTime} className="timer-component" playing={playing}
                         updateIndex={updateIndex} setPlaying={setPlaying} skipKey={skipKey}

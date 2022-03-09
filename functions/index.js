@@ -19,7 +19,7 @@ async function get_phone_numbers() {
 }
 
 exports.scheduledFunctionCrontab = functions.runWith({ memory: '2GB' })
-    .pubsub.schedule("24 18 * * *")
+    .pubsub.schedule("30 08 * * *")
     .timeZone("America/Chicago")
     .onRun(async (context) => {
       const promises = [];

@@ -3,6 +3,7 @@ import React from "react";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {get_user} from "../database/users";
+<<<<<<< HEAD
 import {fetch_badge_image, fetch_badges} from "../database/badges";
 
 const badgeList = [
@@ -42,15 +43,24 @@ export function WorkoutFinished({ uid }) {
         });
     }, [uid]);
 
+=======
+import {NextBadge} from "./nextBadge";
+
+export function WorkoutFinished({ uid }) {
+    const today = new Date(Date.now());
+>>>>>>> d822cb7fd6fa734c2f1fd2ecad6f465e52593664
     const [photo, setPhoto] = useState("");
-  
+    const copyText = "I finished the fountain workout on " + today.toDateString() + "! Come and Join me: https://fountain-37243.web.app"
+
     useEffect(() => {
         get_user(uid).then(value => {
-            setPhoto(value.val().userPhoto)
+            setPhoto(value.userPhoto)
         });
     }, [uid]);
+
     return (
         <div className="startwrapper">
+<<<<<<< HEAD
           
           <div>You did it!</div>
           <img className = "profile-photo" src={photo} alt="UserPhoto"/>
@@ -62,22 +72,29 @@ export function WorkoutFinished({ uid }) {
               <button type="button" className="btn btn-outline-dark"  onClick={() => {
                  navigator.clipboard.writeText("I finished the fountain workout on " + today.toDateString() + "! https://fountain-37243.web.app").then(() =>{
                     alert("copy success!"); 
+=======
+            <h2 style={{fontFamily:"Fredoka"}}>You did it!</h2>
+            <img className = "profile-photo" src={photo} alt="UserPhoto"/>
+            <h5 className="m-3" style={{fontFamily:"Fredoka"}}>Well done, youe're on track to improving your lifespan by an extra 5 years!</h5>
+            <NextBadge uid={uid}/>
+            <button style={{fontFamily:"Fredoka"}} type="button" className="btn btn-outline-dark m-1"  onClick={() => {
+                 navigator.clipboard.writeText(copyText).then(() =>{
+                    alert("copy success!");
+>>>>>>> d822cb7fd6fa734c2f1fd2ecad6f465e52593664
                  })
-                 
-             }} >Copy to Clipboard
-             </button>
-          <button type="button" className="btn btn-outline-dark"  onClick={() => {
-                 navigator.clipboard.writeText("I finished the fountain workout on " + today.toDateString() + "! https://fountain-37243.web.app").then(() =>{
+                }}>Copy to Clipboard
+            </button>
+            <button style={{fontFamily:"Fredoka"}} type="button" className="btn btn-outline-dark m-1"  onClick={() => {
+                 navigator.clipboard.writeText(copyText).then(() =>{
                     window.location="https://www.facebook.com/groups/fountainfit/";
                  })
-                 
-             }}>Share on Fountain Facebook</button>
-          <button type="button" className="btn btn-outline-dark"  onClick={() => {
-                alert("This is a premium feature!")
-            }} >
+                }}>Share on Fountain Facebook
+            </button>
+            <button style={{fontFamily:"Fredoka"}} type="button" className="btn btn-outline-dark m-1"  onClick={() => {
+                    alert("This is a premium feature!")
+                }}>
                 Try a workout with a friend
             </button>
-          
         </div>
     );
 }
@@ -89,8 +106,8 @@ function Start() {
   
     useEffect(() => {
         get_user(uid).then(value => {
-            setName(value.val().userName)
-            setPhoto(value.val().userPhoto)
+            setName(value.userName)
+            setPhoto(value.userPhoto)
         });
     }, [uid]);
     return (
@@ -107,7 +124,7 @@ function Start() {
               Complete this class and earn your two week acheivement badge!
             </div>
             <div>
-              <img src="https://firebasestorage.googleapis.com/v0/b/fountain-37243.appspot.com/o/badge1.jpg?alt=media&token=77ce3782-3428-4f95-ba5e-1567661136dc"alt="badge working towards"/>
+              <img src="https://firebasestorage.googleapis.com/v0/b/fountain-37243.appspot.com/o/badge1.jpg?alt=media&token=77ce3782-3428-4f95-ba5e-1567661136dc" alt="badge working towards"/>
             </div>
             <a href={"/preview/"+uid}>Review Workout</a>
           </div>

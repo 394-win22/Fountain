@@ -3,7 +3,7 @@ import {Container, Row, Col, Card} from "react-bootstrap";
 import {fetch_workouts} from "../database/workout";
 import {useNavigate} from "react-router-dom";
 
-export function Preview() {
+export function Review() {
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
     const navigate = useNavigate();

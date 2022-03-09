@@ -24,8 +24,8 @@ jobs:
       - uses: cypress-io/github-action@v2
         with:
           build: npm run build
-          start: npm start
-          wait-on: http://localhost:3000
+          start: npm run em:run
+          wait-on: http://127.0.0.1:5002
   
 
   deploy:

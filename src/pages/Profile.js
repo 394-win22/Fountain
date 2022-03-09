@@ -15,10 +15,10 @@ export function Profile() {
 
     useEffect(() => {
         get_user(uid).then(value => {
-            setName(value.val().userName)
-            setEmail(value.val().userEmail)
-            setPhoto(value.val().userPhoto)
-            setPhoneNumber(value.val().userPhoneNumber)
+            setName(value.userName)
+            setEmail(value.userEmail)
+            setPhoto(value.userPhoto)
+            setPhoneNumber(value.userPhoneNumber)
 
         });
         fetch_badges(uid).then(value => {
@@ -36,15 +36,15 @@ export function Profile() {
                     <img className = "profile-photo" src={photo} alt="UserPhoto"/>
                 </div>
                 <div className="col-sm-6">
-                    <div>Your Name: {name ? name : "NULL"}</div>
-                    <div>Your email: {email ? email : "NULL"}</div>
-                    <div> Your Number: {phoneNumber? phoneNumber: 
-                    <form>
-                        <label>
-                            <input type="text" name="number" onChange={number => add_number(uid,number.target.value)}/>
-                        </label>
-                        <input type="submit" value="Submit" />
-                    </form>}
+                    <div style={{fontFamily:"Fredoka"}}>Your Name: {name ? name : "NULL"}</div>
+                    <div style={{fontFamily:"Fredoka"}}>Your email: {email ? email : "NULL"}</div>
+                    <div style={{fontFamily:"Fredoka"}}>Your Number: {phoneNumber? phoneNumber:
+                        <form>
+                            <label>
+                                <input type="text" name="number" onChange={number => add_number(uid,number.target.value)}/>
+                            </label>
+                            <input type="submit" value="Submit" />
+                        </form>}
                     </div>
                     {badges && badgeImages? <div> {Object.keys(badges).map(key => {
                         return <img src={badgeImages[key].image} width="100" alt={key}/>

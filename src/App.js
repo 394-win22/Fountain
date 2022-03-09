@@ -14,7 +14,7 @@ import Start from "./pages/Start";
 import {PastWorkouts} from './pages/PastWorkouts';
 
 import Countdown from "./pages/Timer";
-import {Preview} from "./pages/Preview";
+import {Review} from "./pages/Review";
 
 
 function App() {
@@ -47,7 +47,7 @@ function App() {
                     <Route path="/start/" element={<Start UID={uid} />} />
                     <Route path='/pastWorkouts/' element={<PastWorkouts />}/>
                     <Route path="/profile/:uid" element={<Profile />} />
-                    <Route path="/preview/" element={<Preview UID={uid}/>} />
+                    <Route path="/review/" element={<Review UID={uid}/>} />
                     <Route path="/countdown/" element={<Countdown />} />
 
                 </Routes>
