@@ -47,9 +47,18 @@ export function make_user(uid, name, email, photoUrl){
     });
 }
 
+export function add_number(uid, phoneNumber){
+    update(ref(db, 'users/' + uid), {
+        userPhoneNumber:phoneNumber
+    }).then(() => {
+    }).catch((error) => {
+        console.log(error);
+    });
+}
+
 export async function get_user(uid) {
     return await get(ref(db, `users/` + uid)).then((snapshot) => {
-        return snapshot;
+        return snapshot.val();
     }).catch((error) => {
         console.error(error);
     })
@@ -119,4 +128,9 @@ export async function fetchWorkoutDate(uid) {
         console.log(error);
     });
 }
+
+
+
+
+
 

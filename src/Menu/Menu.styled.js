@@ -4,7 +4,6 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /*background: */
   height: 100vh;
   text-align: left;
   padding: 2rem;
@@ -17,11 +16,12 @@ export const StyledMenu = styled.nav`
 
   @media (max-width: 576px) {
     width: 100%;
+    background: white;
   }
 
   a {
     font-size: 2rem;
-    text-transform: uppercase;
+    font-family:"Fredoka";
     padding: 2rem 0;
     font-weight: bold;
     letter-spacing: 0.5rem;

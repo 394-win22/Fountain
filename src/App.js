@@ -11,7 +11,11 @@ import {Navbar, NavbarBrand, Container} from "react-bootstrap";
 import {Burger} from "./Burger/Burger";
 import {Menu} from "./Menu/Menu";
 import Start from "./pages/Start";
-import {Preview} from "./pages/Preview";
+import {PastWorkouts} from './pages/PastWorkouts';
+
+import Countdown from "./pages/Timer";
+import {Review} from "./pages/Review";
+
 
 function App() {
   const [uid, setUid] = useState("")
@@ -24,12 +28,12 @@ function App() {
         <div>
             {user? <Navbar bg="light">
                 <Container>
-                    <NavbarBrand className="me-2" href="/">
+                    <NavbarBrand className="me-2" href="/start">
                         <img className="d-inline-block align-top" src={logo} alt="logo" height="60"/>
                     </NavbarBrand>
                 </Container>
-                <div>
-                    <Burger open={open} setOpen={setOpen} />
+                <div >
+                    <Burger  open={open} setOpen={setOpen} />
                     <Menu open={open} setOpen={setOpen} uid={uid} setUid={setUid}/>
                 </div>
             </Navbar> : null}
@@ -38,10 +42,14 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Login user={user} UEmail={UEmail} UName={UName}
                                                                 setUEmail={setUEmail} setUName={setUName} setUid={setUid}/>} />
-                    <Route path="/home/:uid" element={<Home />} />
-                    <Route path="/start/:uid" element={<Start />} />
+
+                    <Route path="/home/" element={<Home UID={uid} />} />
+                    <Route path="/start/" element={<Start UID={uid} />} />
+                    <Route path='/pastWorkouts/' element={<PastWorkouts />}/>
                     <Route path="/profile/:uid" element={<Profile />} />
-                    <Route path="/preview/:uid" element={<Preview />} />
+                    <Route path="/review/" element={<Review UID={uid}/>} />
+                    <Route path="/countdown/" element={<Countdown />} />
+
                 </Routes>
             </BrowserRouter>
       </div>

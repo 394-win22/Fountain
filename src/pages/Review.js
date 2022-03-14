@@ -1,36 +1,43 @@
 import React, {useEffect, useState} from "react";
 import {Container, Row, Col, Card} from "react-bootstrap";
 import {fetch_workouts} from "../database/workout";
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-export function Preview() {
-    const { uid } = useParams()
+export function Review() {
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
         fetch_workouts().then(value => {
-            // let random = value.sort(() => .5 - Math.random()).slice(0,5);
-            // const workOutArr = random.map(x => x["Exercise Name"]);
-            // setWorkouts(workOutArr);
-
-            //hardcode in workout for now
-            const workOutArr = [value[26]["Exercise Name"], value[3]["Exercise Name"], value[0]["Exercise Name"], value[10]["Exercise Name"], value[32]["Exercise Name"]];
+            let workOutArr = [];
+            let gifArr = [];
+            Object.values(value).forEach((val) => {
+                workOutArr.push(val["Exercise Name"])
+                gifArr.push(val["Image"])
+            })
             setWorkouts(workOutArr);
-            const gifArr = [value[26]["Image"], value[3]["Image"], value[0]["Image"], value[10]["Image"], value[32]["Image"]];
             setGifs(gifArr)
         })
     }, []);
 
     return (
         <div>
-            <h2>Preview Workout</h2>
-            <h6>Total Time: 10 min</h6>
-            <h6>Total Workouts: {workouts.length}</h6>
-            <button onClick={() => {
-                navigate('/home/'+uid);
-            }}>Start</button>
+            <div id="preview-back-start">
+                <button className="previewBack" onClick={() => {
+                    navigate('/start/');
+                }}>Back</button>
+                <span/>
+                <button className="previewStart" onClick={() => {
+                    navigate('/countdown/');
+                }}>Start</button>
+            </div>
+            <div style={{marginLeft: 10+"%"}}>
+                <h2>Preview Workout</h2>
+                <h6>Total Time: 10 min</h6>
+                <h6>Total Workouts: {workouts.length}</h6>
+            </div>
+
             <Container>
                 <Row xs={1} md={2}>
                     {Object.keys(workouts).map((value) => {

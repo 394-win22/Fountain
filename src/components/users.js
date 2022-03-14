@@ -7,11 +7,11 @@ export function SignInButton({ setUName }){
     const navigate = useNavigate();
     return (
     <div className="sign-in d-grid gap-3 col-3 p-2">
-    <button type="button" className="btn btn-outline-dark" onClick={ () => {
-        signInWithGoogle().then(([uid, email, name, photoUrl]) => {
+    <button data-cy="button" type="button" className="startbutton" onClick={ () => {
+        signInWithGoogle().then(([uid, email, name, photoUrl, phoneNumber ]) => {
             setUName(name);
             make_user(uid, name, email, photoUrl);
-            navigate('/start/'+uid);
+            navigate('/start/');
         })
     }} >Login</button></div>
     )
@@ -23,7 +23,7 @@ export function SignOutButton({ setUEmail, setUName, setUid }){
     const navigate = useNavigate();
     return(
         <div className="sign-out d-grid gap-3 col-3 m-5">
-    <button type="button" className="btn btn-outline-dark" onClick={ () => {
+    <button type="button" className="startbutton" onClick={ () => {
         signOut();
         setUEmail("");
         setUName("");

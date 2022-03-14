@@ -3,34 +3,44 @@ import {fetch_workouts} from "../database/workout";
 import {useEffect, useState} from 'react';
 import {WorkoutArea} from "../components/workoutArea";
 import {WorkoutFinished} from "../components/workoutFinished";
-import {useParams} from "react-router-dom";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {firebase} from "../database/firebase";
 
-function Home() {
-    const { uid } = useParams()
+function Home({ UID }) {
+    const [uid, setUID] = useState(UID);
+    const [instructions, setInstructions] = useState([]);
     const [workouts, setWorkouts] = useState([]);
     const [gifs, setGifs] = useState([]);
     const [finished, setFinished] = useState(false);
 
     useEffect(() => {
+        const auth = getAuth(firebase);
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUID(user.uid);
+            }
+        })
         fetch_workouts().then(value => {
-            // let random = value.sort(() => .5 - Math.random()).slice(0,5);
-            // const workOutArr = random.map(x => x["Exercise Name"]);
-            // setWorkouts(workOutArr);
-
-            //hardcode in workout for now
-            const workOutArr = [value[26]["Exercise Name"], value[3]["Exercise Name"], value[0]["Exercise Name"], value[10]["Exercise Name"], value[32]["Exercise Name"]];
+            let workOutArr = [];
+            let gifArr = [];
+            let instructionsArr = [];
+            Object.values(value).forEach((val) => {
+                workOutArr.push(val["Exercise Name"])
+                gifArr.push(val["Image"])
+                instructionsArr.push(val["Instructions"])
+            })
+            setInstructions(instructionsArr);
             setWorkouts(workOutArr);
-            const gifArr = [value[26]["Image"], value[3]["Image"], value[0]["Image"], value[10]["Image"], value[32]["Image"]];
             setGifs(gifArr)
-    })
+        })
     }, []);
     
 
     return (
         <div className="home-wrapper m-3">
             {finished ?
-                <WorkoutFinished />
-                : <WorkoutArea workouts={workouts} gifs={gifs} setFinished={setFinished} uid={uid}/>
+                <WorkoutFinished uid={uid} />
+                : <WorkoutArea workouts={workouts} instructions={instructions} gifs={gifs} setFinished={setFinished} uid={uid}/>
             }
         </div>
     );
