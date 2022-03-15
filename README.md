@@ -4,11 +4,9 @@
 Fountain is a fitness app that lets you do a quick workout of the day anywhere for fun and share with anyone
 
 ![OS](https://img.shields.io/badge/OS-Linux-red?style=flat&logo=linux)
-[![made-with-python](https://img.shields.io/badge/Made%20with-Python%203.8-1f425f.svg?logo=python)](https://www.python.org/)
-[![Docker](https://img.shields.io/badge/Docker-available-green.svg?style=flat&logo=docker)](https://github.com/emalderson/ThePhish/tree/master/docker)
+[![made-with-react](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
 [![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/emalderson/ThePhish)
-[![GitHub](https://img.shields.io/github/license/emalderson/ThePhish)](https://github.com/emalderson/ThePhish/blob/master/LICENSE)
-[![Documentation](https://img.shields.io/badge/Documentation-complete-green.svg?style=flat)](https://github.com/emalderson/ThePhish)
+[![Documentation](https://img.shields.io/badge/Documentation-complete-green.svg?style=flat)](https://github.com/394-win22/Fountain)
 
 ## Table of contents
 
