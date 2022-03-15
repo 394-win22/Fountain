@@ -24,16 +24,16 @@ export function Review() {
     return (
         <div>
             <div id="preview-back-start">
-                <button className="previewBack" onClick={() => {
+                <button data-cy="Back" className="previewBack" onClick={() => {
                     navigate('/start/');
                 }}>Back</button>
                 <span/>
-                <button className="previewStart" onClick={() => {
+                <button data-cy="Start" className="previewStart" onClick={() => {
                     navigate('/countdown/');
                 }}>Start</button>
             </div>
             <div style={{marginLeft: 10+"%"}}>
-                <h2>Preview Workout</h2>
+                <h2 data-cy="Preview">Preview Workout</h2>
                 <h6>Total Time: 10 min</h6>
                 <h6>Total Workouts: {workouts.length}</h6>
             </div>
@@ -41,7 +41,7 @@ export function Review() {
             <Container>
                 <Row xs={1} md={2}>
                     {Object.keys(workouts).map((value) => {
-                        return <Col key={value} style={{width:"48%", margin:"1%"}} >
+                        return <Col data-cy="Cards" key={value} style={{width:"48%", margin:"1%"}} >
                             <Card>
                                 <Card.Header>{parseInt(value)+1}.{workouts[value]}</Card.Header>
                                 <Card.Img style={{height:"10%"}} src= {gifs[value]} alt={"gif"} />
