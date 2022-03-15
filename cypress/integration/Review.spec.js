@@ -10,7 +10,7 @@ describe ('Test App', () => {
     });
     it('press the back button in Review Page', () => {
         cy.visit ('/review');
-        cy.get('[data-cy=backButton]').click();
+        cy.get('[data-cy=Back]').click();
         cy.visit ('/start');
         cy.get('[data-cy=welcome]').should('contain', 'Welcome back')
     });

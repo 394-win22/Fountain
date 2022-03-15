@@ -26,7 +26,7 @@ export function Review() {
             <div id="preview-back-start">
                 <button data-cy="Back" className="previewBack" onClick={() => {
                     navigate('/start/');
-                }} data-cy="backButton">Back</button>
+                }}>Back</button>
                 <span/>
                 <button data-cy="Start" className="previewStart" onClick={() => {
                     navigate('/countdown/');
