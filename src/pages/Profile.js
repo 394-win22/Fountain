@@ -12,6 +12,8 @@ export function Profile() {
     const [phoneNumber, setPhoneNumber] = useState("")
     const [badges, setBadges] = useState()
     const [badgeImages, setBadgeImages] = useState()
+    const [inputNumber, setNumber] = useState()
+    const [disable, setDisable] = useState(true)
 
     useEffect(() => {
         get_user(uid).then(value => {
@@ -36,15 +38,22 @@ export function Profile() {
                     <img className = "profile-photo" src={photo} alt="UserPhoto"/>
                 </div>
                 <div className="col-sm-6">
-                    <div style={{fontFamily:"Fredoka"}}>Your Name: {name ? name : "NULL"}</div>
+                    <div data-cy="UserName" style={{fontFamily:"Fredoka"}}>Your Name: {name ? name : "NULL"}</div>
                     <div style={{fontFamily:"Fredoka"}}>Your email: {email ? email : "NULL"}</div>
-                    <div style={{fontFamily:"Fredoka"}}>Your Number: {phoneNumber? phoneNumber:
-                        <form>
-                            <label>
-                                <input type="text" name="number" onChange={number => add_number(uid,number.target.value)}/>
-                            </label>
-                            <input type="submit" value="Submit" />
-                        </form>}
+                    <div data-cy="UserNumber" style={{fontFamily:"Fredoka"}}>Your Number:
+                        {disable? phoneNumber :
+                            <>
+                                <input data-cy="InputNumber" defaultValue={phoneNumber} type="text" name="number"
+                                       onChange={
+                                           number => setNumber(number.target.value)
+                                       }/>
+                                <button data-cy="UpdateButton" onClick={() => {
+                                            add_number(uid, inputNumber);
+                                            window.location.reload()
+                                }}>Update</button>
+                            </>
+                        }
+                        <a data-cy="EditButton" href="#"><i className="bi bi-pencil-fill" onClick={() => setDisable(!disable)}/></a>
                     </div>
                     {badges && badgeImages? <div> {Object.keys(badges).map(key => {
                         return <img src={badgeImages[key].image} width="100" alt={key}/>

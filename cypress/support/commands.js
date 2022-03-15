@@ -39,7 +39,7 @@ const firebaseConfig = {
     measurementId: "G-M8XXSWX2D8"
   };
 
-  firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 attachCustomCommands({ Cypress, cy, firebase });
   
