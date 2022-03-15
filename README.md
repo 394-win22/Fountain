@@ -61,9 +61,20 @@ Run npm install [package_name] for a missing library
 Some images could match to a wrong workout \
 Some workouts do not have a corresponding gif
 
-
 ## Non-coding steps
+### Prerequisite
+Creating `.env` file under the main folder, and add your firebase SDK config under the following format:
+```
+REACT_APP_API_KEY = "YOUR-UNIQUE-CREDENTIALS"
+REACT_APP_AUTH_DOMAIN = "YOUR-PROJECT-NAME.firebaseapp.com"
+REACT_APP_PROJECT_ID = "YOUR-PROJECT-FIREBASE-PROJECT-ID"
+REACT_APP_STORAGE_BUCKET = "YOUR-PROJECT-NAME.appspot.com"
+REACT_APP_MESSAGING_SENDER_ID = "YOUR-PROJECT-SENDER-ID"
+REACT_APP_APP_ID = "YOUR-PROJECT-APP-ID"
+REACT_APP_MESUREMENT_ID = "YOUR-MESUREMENT_ID"
+```
 
 ## Credits
 [Kelvin Forson](https://www.linkedin.com/in/kelvin-forson-47430117a/) \
-[Conor Kotwasinski](https://www.linkedin.com/in/conor-kotwasinski-86aa97200/)
+[Conor Kotwasinski](https://www.linkedin.com/in/conor-kotwasinski-86aa97200/) \
+[Dong Yang](https://www.linkedin.com/in/dong-yang-05562121b/)
