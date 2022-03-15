@@ -53,7 +53,7 @@ export function Profile() {
                                 }}>Update</button>
                             </>
                         }
-                        <a data-cy="EditButton" href="#"><i className="bi bi-pencil-fill" onClick={() => setDisable(!disable)}/></a>
+                        <button data-cy="EditButton" ><i className="bi bi-pencil-fill" onClick={() => setDisable(!disable)}/></button>
                     </div>
                     {badges && badgeImages? <div> {Object.keys(badges).map(key => {
                         return <img src={badgeImages[key].image} width="100" alt={key}/>
