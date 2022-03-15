@@ -18,6 +18,10 @@ Fountain is a fitness app that lets you do a quick workout of the day anywhere f
 
 ## How to download and install
 
+To download the app, navigate to the folder where to wish to download the app to and run:
+
+### `git clone https://github.com/394-win22/Fountain`
+
 In the project directory, you can run:
 
 ### `npm i`
