@@ -11,12 +11,17 @@ describe('Visit Workout Page', ()=> {
 
     it('Click start button', () => {
         cy.get('[data-cy=Start-Button]').click();
-        cy.get('[data-cy=wodc]').should('contain', `WODC`);
+        cy.get('[data-cy=countdown-timer]').should('contain', `Are you ready?!`);
     })
 
-    it('Gif and message on workout page', () => {
-        cy.get('[data-cy=gif]').should('be.visible');;
-        cy.get('[data-cy=message]').should('be.visible');
+    it('Gif on workout page', () => {
+        cy.wait(300)
+        cy.get('[data-cy=gif]').should('be.visible');   
+    })
+
+    it('Gif on workout page', () => {
+        cy.wait(300)
+        cy.get('[data-cy=gif]').should('be.visible');   
     })
 
 
