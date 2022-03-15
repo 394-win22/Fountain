@@ -25,7 +25,7 @@ function Start({ UID }) {
 
     return (
         <div data-cy="Start" className="startwrapper">
-            <div className="welcome-back">Welcome back {name ? name : "NULL"}!</div>
+            <div className="welcome-back" data-cy="welcome">Welcome back {name ? name : "NULL"}!</div>
             <img className="profile-photo" src={photo} alt="UserPhoto"/>
             <div className="wodc-start">Workout Of The Day Challenge (WODC)</div>
 

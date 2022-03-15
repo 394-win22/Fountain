@@ -26,14 +26,14 @@ export function Review() {
             <div id="preview-back-start">
                 <button className="previewBack" onClick={() => {
                     navigate('/start/');
-                }}>Back</button>
+                }} data-cy="backButton">Back</button>
                 <span/>
                 <button className="previewStart" onClick={() => {
                     navigate('/countdown/');
                 }}>Start</button>
             </div>
             <div style={{marginLeft: 10+"%"}}>
-                <h2>Preview Workout</h2>
+                <h2 data-cy="reviewTitle">Preview Workout</h2>
                 <h6>Total Time: 10 min</h6>
                 <h6>Total Workouts: {workouts.length}</h6>
             </div>
