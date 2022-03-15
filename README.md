@@ -62,7 +62,7 @@ Some images could match to a wrong workout \
 Some workouts do not have a corresponding gif
 
 ## Non-coding steps
-### Prerequisite
+### Prerequisites
 Creating `.env` file under the main folder, and add your firebase SDK config under the following format:
 ```
 REACT_APP_API_KEY = "YOUR-UNIQUE-CREDENTIALS"
@@ -73,6 +73,10 @@ REACT_APP_MESSAGING_SENDER_ID = "YOUR-PROJECT-SENDER-ID"
 REACT_APP_APP_ID = "YOUR-PROJECT-APP-ID"
 REACT_APP_MESUREMENT_ID = "YOUR-MESUREMENT_ID"
 ```
+Upload the [defaults file](https://github.com/394-win22/Fountain/blob/master/fountainDefaults.json) to the realtime database of your firebase project.\
+
+Add the Twilio Text Messaging add-on to your Firebase console and set up your Twilio account.
+
 
 ## Credits
 [Kelvin Forson](https://www.linkedin.com/in/kelvin-forson-47430117a/) \
