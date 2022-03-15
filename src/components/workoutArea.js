@@ -184,10 +184,10 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
                                 </button>
                             </div>:
                             <div>
-                                <button type="button" className="timer-button" onClick={() => setPlaying(true)}>
+                                <button type="button" data-cy="play" className="timer-button" onClick={() => setPlaying(true)}>
                                     <i className="bi bi-play"/>
                                 </button>
-                                <button type="button" className="timer-button" onClick={()=> {
+                                <button type="button" data-cy="skip" className="timer-button" onClick={()=> {
                                      updateIndex()
                                      setSkipKey(Math.floor(Math.random()*10000000))
                                     }}><i className="bi bi-skip-forward"/>
