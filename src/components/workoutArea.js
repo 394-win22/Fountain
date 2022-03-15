@@ -174,12 +174,12 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
             <div className="gif-wrapper"> <img data-cy="gif" className="gif" src= {gifs[index]} alt={"gif"}/></div>
             <div data-cy="message" className="displayMessage">{displayMessage(outRemTime, instructions[index])}</div>
             <div className="timewrapper">
-                <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>
+                <div data-cy="exercise-number" className="workout-index">Exercise {index + 1}/{workouts.length}</div>
                 { index < 5 ?
                     <div>
                         { playing ?
                             <div>
-                                <button type="button" className="timer-button" onClick={() => setPlaying(false)} >
+                                <button data-cy="pause" type="button" className="timer-button" onClick={() => setPlaying(false)} >
                                     <i className="bi bi-pause"/>
                                 </button>
                             </div>:
