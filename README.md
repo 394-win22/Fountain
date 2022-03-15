@@ -75,7 +75,7 @@ REACT_APP_MESUREMENT_ID = "YOUR-MESUREMENT_ID"
 ```
 Upload the [defaults file](https://github.com/394-win22/Fountain/blob/master/fountainDefaults.json) to the realtime database of your firebase project.\
 
-Add the Twilio Text Messaging add-on to your Firebase console and set up your Twilio account.
+Add the [Twilio Text Messaging](https://firebase.google.com/products/extensions/twilio-send-message?authuser=1&hl=en) extension to your Firebase console and set up your Twilio account.
 
 
 ## Credits
