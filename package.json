@@ -35,7 +35,6 @@
     "em:start": "firebase emulators:start --import=./saved-data --export-on-exit",
     "em:run": "firebase emulators:exec --import=./saved-data 'npm start'"
   },
-
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -55,7 +54,9 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^9.5.0",
+    "cypress": "^9.5.2",
+    "cypress-firebase": "^2.2.1",
+    "firebase-admin": "^10.0.2",
     "survey-react": "^1.9.13"
   }
 }
