@@ -16,7 +16,7 @@ Fountain is a fitness app that lets you do a quick workout of the day anywhere f
 * [Non-coding steps](#Non-coding-steps)
 * [Credits](#credits)
 
-#How to download and install
+## How to download and install
 
 In the project directory, you can run:
 
@@ -24,10 +24,10 @@ In the project directory, you can run:
 
 This installs all of the necessary libraries to run the app in development mode
 
-#Libraries
+## Libraries
 
-#Known bugs and issues
+## Known bugs and issues
 
-#Non-coding steps
+## Non-coding steps
 
-#Credits
+## Credits
