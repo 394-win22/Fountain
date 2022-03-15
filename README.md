@@ -52,9 +52,17 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 Deploys the app to the specified firebase project.
 
 ## Libraries
+Node.js 
+Download [Node](https://nodejs.org/en/download/)
+
+Run npm install [package_name] for a missing library
 
 ## Known bugs and issues
+Some images could match to a wrong workout \
+Some workouts do not have a corresponding gif
+
 
 ## Non-coding steps
 
 ## Credits
+[Kelvin Forson](https://www.linkedin.com/in/kelvin-forson-47430117a/)
