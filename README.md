@@ -65,5 +65,5 @@ Some workouts do not have a corresponding gif
 ## Non-coding steps
 
 ## Credits
-[Kelvin Forson](https://www.linkedin.com/in/kelvin-forson-47430117a/)
+[Kelvin Forson](https://www.linkedin.com/in/kelvin-forson-47430117a/) \
 [Conor Kotwasinski](https://www.linkedin.com/in/conor-kotwasinski-86aa97200/)
