@@ -18,6 +18,12 @@ Fountain is a fitness app that lets you do a quick workout of the day anywhere f
 
 #How to download and install
 
+In the project directory, you can run:
+
+### `npm i`
+
+This installs all of the necessary libraries to run the app in development mode
+
 #Libraries
 
 #Known bugs and issues
