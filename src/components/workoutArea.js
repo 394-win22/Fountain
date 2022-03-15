@@ -144,7 +144,7 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
     const Workout = () => {
         return(
             <div>
-                <h1 className="wodc"> WODC </h1>
+                <h1 data-dy="wodc" className="wodc"> WODC </h1>
                 <div className="workout">{workouts[index]}</div>
             </div>
         )
@@ -171,8 +171,8 @@ export function WorkoutArea({ workouts, instructions, gifs, setFinished, uid}) {
     return (
         <div>
             <Workout />
-            <div className="gif-wrapper"> <img className="gif" src= {gifs[index]} alt={"gif"}/></div>
-            <div className="displayMessage">{displayMessage(outRemTime, instructions[index])}</div>
+            <div className="gif-wrapper"> <img data-cy="gif" className="gif" src= {gifs[index]} alt={"gif"}/></div>
+            <div data-cy="message" className="displayMessage">{displayMessage(outRemTime, instructions[index])}</div>
             <div className="timewrapper">
                 <div className="workout-index">Exercise {index + 1}/{workouts.length}</div>
                 { index < 5 ?
