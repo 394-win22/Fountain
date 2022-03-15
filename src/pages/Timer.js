@@ -27,7 +27,7 @@ function Countdown() {
     
     return (
     <div data-cy="countdown-timer" className="timer-wrapper">
-        <div>
+        <div data-cy="WODC">
             WODC
         </div>
         <Timer />

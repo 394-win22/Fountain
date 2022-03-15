@@ -27,7 +27,7 @@ function Start({ UID }) {
         <div data-cy="Start" className="startwrapper">
             <div className="welcome-back" data-cy="welcome">Welcome back {name ? name : "NULL"}!</div>
             <img className="profile-photo" src={photo} alt="UserPhoto"/>
-            <div className="wodc-start">Workout Of The Day Challenge (WODC)</div>
+            <div data-cy="wodc-start" className="wodc-start">Workout Of The Day Challenge (WODC)</div>
 
             <a data-cy="Start-Button" className="startbutton" href={"/countdown/"}>Begin Workout of the Day</a>
             <NextBadge uid={uid} containReview={true}/>
