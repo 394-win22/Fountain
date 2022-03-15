@@ -1,7 +1,7 @@
-17:48:33.279 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
-17:48:33.777 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
-18:16:38.398 [Thread-1] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
-18:16:38.413 [NamespaceSystem-akka.actor.default-dispatcher-12] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: fountain-37243
-18:16:38.420 [NamespaceSystem-akka.actor.default-dispatcher-15] INFO com.firebase.core.namespace.NamespaceActor - Stopping namespace actor for fountain-37243
-18:16:38.424 [NamespaceSystem-akka.actor.default-dispatcher-15] INFO com.firebase.core.namespace.NamespaceActor - Gauges removed for fountain-37243
-18:16:38.430 [Thread-1] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
+19:30:05.598 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+19:30:06.308 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+19:30:35.108 [Thread-1] INFO com.firebase.server.forge.App$ - Attempting graceful shutdown.
+19:30:35.128 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.Terminator$Terminator - 1 actors left to terminate: fountain-37243
+19:30:35.148 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - Stopping namespace actor for fountain-37243
+19:30:35.150 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - Gauges removed for fountain-37243
+19:30:35.160 [Thread-1] INFO com.firebase.server.forge.App$ - Graceful shutdown complete.
