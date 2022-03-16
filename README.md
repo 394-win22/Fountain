@@ -1,10 +1,33 @@
-# Getting Started with Create React App
+# Fountain 
+<img src="https://github.com/394-win22/Fountain/blob/master/src/images/Fountain-logo.png" alt="fountain-logo" width="200"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fountain is a fitness app that lets you do a quick workout of the day anywhere for fun and share with anyone
 
-## Available Scripts
+[![made-with-react](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)](https://reactjs.org/)
+[![Maintenance](https://img.shields.io/badge/Maintained-yes-green.svg)](https://github.com/394-win22/Fountain)
+[![Documentation](https://img.shields.io/badge/Documentation-complete-green.svg?style=flat)](https://github.com/394-win22/Fountain)
+
+## Table of contents
+
+* [Fountain](#Fountain)
+* [How to download and install](#How-to-download-and-install)
+* [Libraries](#Libraries)
+* [Known bugs and issues](#Known-bugs-and-issues)
+* [Non-coding steps](#Non-coding-steps)
+* [Credits](#credits)
+
+## How to download and install
+
+To download the app, navigate to the folder where to wish to download the app to and run:
+
+### `git clone https://github.com/394-win22/Fountain`
 
 In the project directory, you can run:
+
+### `npm i`
+
+Installs all of the necessary libraries to run the app in development mode.\
+This generates yout node_modules folder.
 
 ### `npm start`
 
@@ -13,11 +36,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
@@ -29,42 +47,38 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `firebase deploy`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Deploys the app to the specified firebase project.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Libraries
+Node.js 
+Download [Node](https://nodejs.org/en/download/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Run npm install [package_name] for a missing library
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Known bugs and issues
+Some images could match to a wrong workout \
+Some workouts do not have a corresponding gif
 
-## Learn More
+## Non-coding steps
+### Prerequisites
+Creating `.env` file under the main folder, and add your firebase SDK config under the following format:
+```
+REACT_APP_API_KEY = "YOUR-UNIQUE-CREDENTIALS"
+REACT_APP_AUTH_DOMAIN = "YOUR-PROJECT-NAME.firebaseapp.com"
+REACT_APP_PROJECT_ID = "YOUR-PROJECT-FIREBASE-PROJECT-ID"
+REACT_APP_STORAGE_BUCKET = "YOUR-PROJECT-NAME.appspot.com"
+REACT_APP_MESSAGING_SENDER_ID = "YOUR-PROJECT-SENDER-ID"
+REACT_APP_APP_ID = "YOUR-PROJECT-APP-ID"
+REACT_APP_MESUREMENT_ID = "YOUR-MESUREMENT_ID"
+```
+Upload the [defaults file](https://github.com/394-win22/Fountain/blob/master/fountainDefaults.json) to the realtime database of your firebase project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Add the [Twilio Text Messaging](https://firebase.google.com/products/extensions/twilio-send-message?authuser=1&hl=en) extension to your Firebase console and set up your Twilio account.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Credits
+[Kelvin Forson](https://www.linkedin.com/in/kelvin-forson-47430117a/) \
+[Conor Kotwasinski](https://www.linkedin.com/in/conor-kotwasinski-86aa97200/) \
+[Dong Yang](https://www.linkedin.com/in/dong-yang-05562121b/)
